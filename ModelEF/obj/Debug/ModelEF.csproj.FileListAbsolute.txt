@@ -3,3 +3,9 @@ E:\DoAnPM\DoAnPM1\ModelEF\bin\Debug\ModelEF.pdb
 E:\DoAnPM\DoAnPM1\ModelEF\obj\Debug\ModelEF.csproj.CoreCompileInputs.cache
 E:\DoAnPM\DoAnPM1\ModelEF\obj\Debug\ModelEF.dll
 E:\DoAnPM\DoAnPM1\ModelEF\obj\Debug\ModelEF.pdb
+C:\Users\LE SI DUY KHAI\OneDrive\Máy tính\DoAnPM1\ModelEF\bin\Debug\ModelEF.dll
+C:\Users\LE SI DUY KHAI\OneDrive\Máy tính\DoAnPM1\ModelEF\bin\Debug\ModelEF.pdb
+C:\Users\LE SI DUY KHAI\OneDrive\Máy tính\DoAnPM1\ModelEF\obj\Debug\ModelEF.csprojAssemblyReference.cache
+C:\Users\LE SI DUY KHAI\OneDrive\Máy tính\DoAnPM1\ModelEF\obj\Debug\ModelEF.csproj.CoreCompileInputs.cache
+C:\Users\LE SI DUY KHAI\OneDrive\Máy tính\DoAnPM1\ModelEF\obj\Debug\ModelEF.dll
+C:\Users\LE SI DUY KHAI\OneDrive\Máy tính\DoAnPM1\ModelEF\obj\Debug\ModelEF.pdb
