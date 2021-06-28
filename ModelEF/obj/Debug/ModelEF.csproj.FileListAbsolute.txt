@@ -1,0 +1,5 @@
+E:\DoAnPM\DoAnPM1\ModelEF\bin\Debug\ModelEF.dll
+E:\DoAnPM\DoAnPM1\ModelEF\bin\Debug\ModelEF.pdb
+E:\DoAnPM\DoAnPM1\ModelEF\obj\Debug\ModelEF.csproj.CoreCompileInputs.cache
+E:\DoAnPM\DoAnPM1\ModelEF\obj\Debug\ModelEF.dll
+E:\DoAnPM\DoAnPM1\ModelEF\obj\Debug\ModelEF.pdb
