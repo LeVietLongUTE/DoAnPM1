@@ -12,7 +12,7 @@ namespace DoAnPM1.Controllers
         {
             return View();
         }
+       
 
-      
     }
 }
