@@ -447,7 +447,7 @@
                                     <li><a href="#" class="ml-1 p-2"><i class=" fa fa-suitcase"></i> <span class="ml-1 p-2">Cập nhật thông tin </span> </a></li>
                                     <li><a href="@Url.Action("DKTaiKhoanNNN", "NguoiDung")" class="ml-1 p-2"><i class="fa fa-user-plus"></i> <span class="ml-1 p-2">Đăng kí tài khoản NNN</span>  </a></li>
 
-                                    <li><a href="@Url.Action("CapNhatTTDD", "NguoiDung")" class="ml-1 p-1"><i class=" fa fa-suitcase"></i> <span class="ml-1 p-2">Cập nhật thông tin đến/đi </span> </a></li>
+                                    <li><a href="@Url.Action("DanhSachNNN", "NguoiDung")" class="ml-1 p-1"><i class=" fa fa-suitcase"></i> <span class="ml-1 p-2">Cập nhật thông tin đến/đi </span> </a></li>
 
                                     <li>
                                         <a href="#" class="ml-1 p-2">
@@ -478,11 +478,17 @@
                 </div>
             </div><!-- end page-title -->
             
-            <section class="section wb p-4">
+            <section class="section md p-4">
                 <h2 class="text-center pb-5 ">Đăng kí Tài Khoản Người Dùng</h2>
                 <div class="container ">
                     <div class="row">
-                        <div class="col ">
+                        <div class="col-md-4 ">
+                            
+                            <input type="text" class="form-control" placeholder="Your name">
+                            <input type="text" class="form-control" placeholder="Email address">
+                            <input type="text" class="form-control" placeholder="Phone">
+                        </div>
+                        <div class="col-md-4 ">
                             <div class="widget">
                                 <div class=" clearfix">
                                     <div class="banner-img  w-50 h-50">
@@ -495,20 +501,7 @@
                             <input type="text" class="form-control" placeholder="Email address">
                             <input type="text" class="form-control" placeholder="Phone">
                         </div>
-                        <div class="col ">
-                            <div class="widget">
-                                <div class=" clearfix">
-                                    <div class="banner-img  w-50 h-50">
-                                        <img src="~/Assets/client/images/f960e8e8d9d859c_126201813.jpg" alt="" class="img-fluid ">
-                                        <h4 class="text-center ">Ảnh xác thực</h4>
-                                    </div><!-- end banner-img -->
-                                </div><!-- end banner -->
-                            </div><!-- end widget -->
-                            <input type="text" class="form-control" placeholder="Your name">
-                            <input type="text" class="form-control" placeholder="Email address">
-                            <input type="text" class="form-control" placeholder="Phone">
-                        </div>
-                        <div class="col ">
+                        <div class="col-md-4">
                             <div class="widget">
                                 <div class=" clearfix">
                                     <div class="banner-img  w-50 h-50">

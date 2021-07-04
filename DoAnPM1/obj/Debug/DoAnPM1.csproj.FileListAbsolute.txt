@@ -160,3 +160,12 @@ C:\Users\longl\Music\DoAnPM1\DoAnPM1\obj\Debug\DoAnPM1.csproj.CoreCompileInputs.
 C:\Users\longl\Music\DoAnPM1\DoAnPM1\obj\Debug\DoAnPM1.csproj.CopyComplete
 C:\Users\longl\Music\DoAnPM1\DoAnPM1\obj\Debug\DoAnPM1.dll
 C:\Users\longl\Music\DoAnPM1\DoAnPM1\obj\Debug\DoAnPM1.pdb
+C:\Users\longl\Music\DoAnPM1\DoAnPM1\bin\EntityFramework.dll
+C:\Users\longl\Music\DoAnPM1\DoAnPM1\bin\ModelEF.dll.config
+C:\Users\longl\Music\DoAnPM1\DoAnPM1\bin\EntityFramework.xml
+C:\Users\longl\Music\DoAnPM1\DoAnPM1\bin\EntityFramework.SqlServer.dll
+C:\Users\longl\Music\DoAnPM1\DoAnPM1\bin\EntityFramework.SqlServer.xml
+C:\Users\longl\Music\DoAnPM1\DoAnPM1\bin\PagedList.dll
+C:\Users\longl\Music\DoAnPM1\DoAnPM1\bin\PagedList.Mvc.dll
+C:\Users\longl\Music\DoAnPM1\DoAnPM1\bin\PagedList.xml
+C:\Users\longl\Music\DoAnPM1\DoAnPM1\bin\PagedList.Mvc.xml
