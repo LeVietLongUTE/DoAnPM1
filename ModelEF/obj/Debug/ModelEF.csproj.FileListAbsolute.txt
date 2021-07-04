@@ -15,3 +15,9 @@ C:\Users\longl\Music\DoAnPM1\ModelEF\obj\Debug\ModelEF.csprojAssemblyReference.c
 C:\Users\longl\Music\DoAnPM1\ModelEF\obj\Debug\ModelEF.csproj.CoreCompileInputs.cache
 C:\Users\longl\Music\DoAnPM1\ModelEF\obj\Debug\ModelEF.dll
 C:\Users\longl\Music\DoAnPM1\ModelEF\obj\Debug\ModelEF.pdb
+C:\Users\longl\Music\DoAnPM1\ModelEF\bin\Debug\ModelEF.dll.config
+C:\Users\longl\Music\DoAnPM1\ModelEF\bin\Debug\EntityFramework.dll
+C:\Users\longl\Music\DoAnPM1\ModelEF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\longl\Music\DoAnPM1\ModelEF\bin\Debug\EntityFramework.xml
+C:\Users\longl\Music\DoAnPM1\ModelEF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\longl\Music\DoAnPM1\ModelEF\obj\Debug\ModelEF.csproj.CopyComplete

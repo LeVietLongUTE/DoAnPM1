@@ -1,0 +1,43 @@
+﻿.tab-pane{
+    margin: auto;
+}
+.title{
+    text-align:center;
+    
+}
+.abc{
+    display:block;
+    width:280px;
+    margin-left:20px;
+  
+}
+.abcd {
+    display: block;
+    width: 300px;
+   margin-left:-30px;
+}
+ul {
+    list-style: none;
+    display: block;
+    word-wrap: normal;
+   
+}
+
+h4{text-align:left;
+   padding-top:5px;
+   display:block;
+   width:200px;
+}
+.btnn {
+    margin: auto;
+    display: block;
+    width:120px;
+    height:50px;
+    font-size:20px;
+    border-radius:4px 4px;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}
