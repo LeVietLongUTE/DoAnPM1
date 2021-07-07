@@ -514,9 +514,17 @@
 
 
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.MaLT }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.MaLT }) |
-                            <a href="~/Admin/User/index/@item.MaLT"><i class="fa fa-trash-o"></i></a>
+
+                            <a href="/Admin/NguoiDung/CapNhatTTDD?idMaLT=@item.MaLT">
+                                <i style="display:inline" class="fa fa-edit"></i>
+                                <p style="display:inline">Edit</p>
+                            </a> |
+                            <a href="#">
+                                <i style="display:inline" class="fa fa-deaf"></i>
+                                <p style="display:inline">Details</p>
+                            </a> |
+                           
+                            <a href="~/Admin/User/index/@item.MaLT"><i style="display:inline" class="fa fa-trash"></i></a>
                             &nbsp;
                             @Ajax.ActionLink("Xoá", "Delete", new { @id = item.MaLT }, new AjaxOptions
                            {
@@ -526,8 +534,8 @@
                              }, new { @class = "myActionLink" })
                             <script>
                                 $('.myActionLink').prepend("<i class='fa fa-trash'></i>");
-                            </script> 
-                           
+                            </script>
+
                         </td>
 
 
