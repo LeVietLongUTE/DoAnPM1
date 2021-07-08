@@ -1,0 +1,167 @@
+﻿@model ModelEF.Model.NguoiNuocNgoai
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+@section header{
+    Thông Tin Cá Nhân
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Thông Tin Cá Nhân Người Nước Ngoài</title>
+    <!-- Custom fonts for this template-->
+    <link href="~/Assets/Login/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="~/Assets/Login/css/sb-admin-2.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-primary">
+    <div class="container">
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-12 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5" style="padding:30px">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row text-md-center" style="padding-top:30px">
+                            <div class="col-8">
+                                <h1 class="h4 text-gray-900 mb-4">Thông Tin Cá Nhân</h1>
+                            </div>
+                            <div class="top-nav clearfix col-4">
+                                <ul class="nav pull-right top-menu">
+                                    <li>
+                                        <p>Xin Chào @ViewBag.HoTen</p>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                            <img alt="" src="images/avatar1_small.jpg">
+                                            <span class="username">
+
+                                            </span>
+                                            <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu extended logout" style="padding:10px">
+                                            <li><a href="~/Home/Index"><i class=" fa fa-home"></i>Trang chủ</a></li>
+                                            <li><a href="~/CapNhatChiTiet/index"><i class=" fa fa-edit"></i>Cập Nhật Chi Tiết Lưu trú</a></li>
+                                            <li><a href="@Url.Action("Index", "Login")"><i class="fa fa-key"></i> Đăng Xuất</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        @using (Html.BeginForm("Index", "NguoiNuocNgoai", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    @Html.HiddenFor(model => model.MaTKNNN)
+                                    <div class="row">
+                                        <p class="text-gray-900 mb-4">Mã Tài Khoản:</p>
+                                        <div class="align-content-end" style="padding-left:20px">
+                                            @ViewBag.MaTKNNN
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <p class="text-gray-900 mb-4">Họ và Tên:</p>
+                                        <div class="form-group" style="padding-left:40px">
+                                            <input class="form-control" data-val="true" data-val-length="" data-val-length-max="100" id="Name" name="Name" type="text" value="@ViewBag.HoTen">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <p class="text-gray-900 mb-4">Ngày Sinh:</p>
+                                        <div class="" style="padding-left:40px">
+                                            <input class="form-control" data-val="true" data-val-length="" data-val-length-max="100" id="Name" name="Name" type="text" value="@ViewBag.NgaySinh">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <p class="text-gray-900 mb-4">Email:</p>
+                                        <div class="" style="padding-left:73px">
+                                            <input class="form-control" data-val="true" data-val-length="" data-val-length-max="100" id="Name" name="Name" type="text" value="@ViewBag.Email">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <p class="text-gray-900 mb-4">Số Điện thoại:</p>
+                                        <div class="" style="margin-left:17px">
+                                            <input class="form-control" data-val="true" data-val-length="" data-val-length-max="100" id="Name" name="Name" type="text" value="@ViewBag.SDT">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <p class="text-gray-900 mb-4">Quốc Tịch:</p>
+                                        <div class="" style="margin-left:40px">
+                                            <input class="form-control" data-val="true" data-val-length="" data-val-length-max="100" id="Name" name="Name" type="text" value="@ViewBag.QuocTich">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <p class="text-gray-900 mb-4">Địa Chỉ TT:</p>
+                                        <div class="" style="margin-left:38px">
+                                            <input class="form-control" data-val="true" data-val-length="" data-val-length-max="100" id="Name" name="Name" type="text" value="@ViewBag.DiachiTT">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <p class="text-gray-900 mb-4">Số Hộ Chiếu:</p>
+                                        <div class="align-content-center" style="padding-left:24px">
+                                            @ViewBag.Passport
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <p>Giới Tính</p>
+                                    <form class="user">
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" class="custom-control-input" id="customCheckboy">
+                                                <label class="custom-control-label" for="customCheckboy">
+                                                    Nam
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" class="custom-control-input" id="customCheckgirl">
+                                                <label class="custom-control-label" for="customCheckgirl">
+                                                    Nữ
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div style="padding-top:30px">
+
+                                            <a href="@Url.Action("Edit", "NguoiNuocNgoai")" class="btn btn-user btn-primary">
+                                                Chỉnh Sửa
+                                            </a>
+
+                                            <a href="#" class="btn btn-user btn-outline-secondary" style="margin:20px">
+                                                Hủy
+                                            </a>
+                                            <a href="#" class="btn btn-user btn-primary">
+                                                Quay Lại
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/Assets/Login/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Assets/Login/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="~/Assets/Login/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="~/Assets/Login/js/sb-admin-2.min.js"></script>
+</body>
+</html>
