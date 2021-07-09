@@ -51,12 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\ChiTietLuuTru.cs" />
-    <Compile Include="Model\connectData.cs" />
+    <Compile Include="Model\connect.cs" />
     <Compile Include="Model\LuuTru.cs" />
     <Compile Include="Model\NguoiDung.cs" />
     <Compile Include="Model\NguoiNuocNgoai.cs" />
     <Compile Include="Model\NhanVien.cs" />
-    <Compile Include="Model\sysdiagrams.cs" />
+    <Compile Include="Model\sysdiagram.cs" />
     <Compile Include="Model\TKAdmin.cs" />
     <Compile Include="Model\TKNhanVien.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

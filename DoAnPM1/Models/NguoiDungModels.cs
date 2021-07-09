@@ -9,10 +9,10 @@ namespace DoAnPM1.Models
 {
     public class NguoiDungModels
     {
-        private connectData db = null;
+        private connect db = null;
         public NguoiDungModels()
         {
-            db = new connectData();
+            db = new connect();
         }
         public IEnumerable<LuuTru> ListAll()
         {
@@ -27,5 +27,31 @@ namespace DoAnPM1.Models
             }
             return mode.OrderBy(x => x.MaTKNNN).ToPagedList(page, pagesize);
         }
+        public LuuTru FindById(string MaLT)
+        {            
+            return db.LuuTru.Find(MaLT);
+        }
+        public bool Edit(LuuTru LuuTru)
+        {
+            try
+            {
+                LuuTru lt = FindById(LuuTru.MaLT);
+                lt.NguoiNuocNgoai.HoTen = LuuTru.NguoiNuocNgoai.HoTen;
+                lt.NDKLT = LuuTru.NDKLT;
+                lt.NDLT = LuuTru.NDLT;
+                lt.SoPhong = LuuTru.SoPhong;
+                lt.NDDK = LuuTru.NDDK;
+                lt.NDTT = LuuTru.NDTT;
+                lt.TrangThai = LuuTru.TrangThai;
+                db.SaveChanges();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
     }
 }

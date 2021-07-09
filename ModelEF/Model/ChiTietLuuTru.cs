@@ -13,6 +13,7 @@ namespace ModelEF.Model
         [StringLength(8)]
         public string MaCT { get; set; }
 
+        [Required]
         [StringLength(8)]
         public string MaLT { get; set; }
 
