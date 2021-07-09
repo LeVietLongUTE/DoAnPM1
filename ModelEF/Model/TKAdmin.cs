@@ -10,7 +10,7 @@ namespace ModelEF.Model
     public partial class TKAdmin
     {
         [Key]
-        [StringLength(4)]
+        [StringLength(7)]
         public string MaTK { get; set; }
 
         [Required]

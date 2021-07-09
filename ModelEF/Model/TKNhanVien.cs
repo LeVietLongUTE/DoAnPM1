@@ -12,7 +12,7 @@ namespace ModelEF.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TKNhanVien()
         {
-            NguoiDung = new HashSet<NguoiDung>();
+            NguoiDungs = new HashSet<NguoiDung>();
         }
 
         [Key]
@@ -28,7 +28,7 @@ namespace ModelEF.Model
         public string KhuVuc { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NguoiDung> NguoiDung { get; set; }
+        public virtual ICollection<NguoiDung> NguoiDungs { get; set; }
 
         public virtual NhanVien NhanVien { get; set; }
     }

@@ -12,25 +12,30 @@ namespace ModelEF.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NguoiDung()
         {
-            LuuTru = new HashSet<LuuTru>();
-            NguoiNuocNgoai = new HashSet<NguoiNuocNgoai>();
+            LuuTrus = new HashSet<LuuTru>();
+            NguoiNuocNgoais = new HashSet<NguoiNuocNgoai>();
         }
 
         [Key]
-        [StringLength(8)]
+        [StringLength(9)]
         public string MaTKND { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string MatKhau { get; set; }
 
         [Required]
         [StringLength(255)]
         public string HoTen { get; set; }
 
+        [Column(TypeName = "date")]
         public DateTime? NgaySinh { get; set; }
 
         [Required]
         [StringLength(3)]
         public string GioiTinh { get; set; }
 
-        [StringLength(11)]
+        [StringLength(10)]
         public string SDT { get; set; }
 
         [Required]
@@ -42,12 +47,12 @@ namespace ModelEF.Model
         public string DVKD { get; set; }
 
         [Required]
-        [StringLength(8)]
+        [StringLength(9)]
         public string CCCD { get; set; }
 
         [Required]
         [StringLength(255)]
-        public string QuocTinh { get; set; }
+        public string QuocTich { get; set; }
 
         [Required]
         [StringLength(200)]
@@ -64,18 +69,18 @@ namespace ModelEF.Model
         public string MCKD { get; set; }
 
         [Required]
-        [StringLength(20)]
+        [StringLength(10)]
         public string TrangThai { get; set; }
 
         [StringLength(8)]
         public string MaTKNV { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LuuTru> LuuTru { get; set; }
+        public virtual ICollection<LuuTru> LuuTrus { get; set; }
 
         public virtual TKNhanVien TKNhanVien { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NguoiNuocNgoai> NguoiNuocNgoai { get; set; }
+        public virtual ICollection<NguoiNuocNgoai> NguoiNuocNgoais { get; set; }
     }
 }

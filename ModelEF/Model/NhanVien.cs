@@ -17,6 +17,7 @@ namespace ModelEF.Model
         [StringLength(255)]
         public string TenNV { get; set; }
 
+        [Column(TypeName = "date")]
         public DateTime? NgaySinh { get; set; }
 
         [Required]
@@ -24,7 +25,7 @@ namespace ModelEF.Model
         public string GioiTinh { get; set; }
 
         [Required]
-        [StringLength(8)]
+        [StringLength(9)]
         public string CCCD { get; set; }
 
         [Required]
@@ -35,7 +36,7 @@ namespace ModelEF.Model
         [StringLength(30)]
         public string Email { get; set; }
 
-        [StringLength(11)]
+        [StringLength(10)]
         public string SDT { get; set; }
 
         public virtual TKNhanVien TKNhanVien { get; set; }

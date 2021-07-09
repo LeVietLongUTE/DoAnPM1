@@ -12,7 +12,7 @@ namespace ModelEF.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LuuTru()
         {
-            ChiTietLuuTru = new HashSet<ChiTietLuuTru>();
+            ChiTietLuuTrus = new HashSet<ChiTietLuuTru>();
         }
 
         [Key]
@@ -23,17 +23,29 @@ namespace ModelEF.Model
         public string MaTKNNN { get; set; }
 
         [Required]
-        [StringLength(8)]
+        [StringLength(9)]
         public string MaTKND { get; set; }
 
-        public int SoPhong { get; set; }
-        [DataType(DataType.Date)]
+        [Required]
+        [StringLength(100)]
+        public string TenCSLT { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        public string DCLT { get; set; }
+
+        [Column(TypeName = "date")]
         public DateTime NDKLT { get; set; }
 
-        public DateTime NDLT { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime? NDLT { get; set; }
 
+        public int SoPhong { get; set; }
+
+        [Column(TypeName = "date")]
         public DateTime NDDK { get; set; }
 
+        [Column(TypeName = "date")]
         public DateTime? NDTT { get; set; }
 
         [Required]
@@ -41,7 +53,7 @@ namespace ModelEF.Model
         public string TrangThai { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietLuuTru> ChiTietLuuTru { get; set; }
+        public virtual ICollection<ChiTietLuuTru> ChiTietLuuTrus { get; set; }
 
         public virtual NguoiDung NguoiDung { get; set; }
 

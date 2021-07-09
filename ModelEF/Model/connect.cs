@@ -5,21 +5,21 @@ using System.Linq;
 
 namespace ModelEF.Model
 {
-    public partial class connectData : DbContext
+    public partial class connect : DbContext
     {
-        public connectData()
-            : base("name=connectData")
+        public connect()
+            : base("name=connect")
         {
         }
 
-        public virtual DbSet<ChiTietLuuTru> ChiTietLuuTru { get; set; }
+        public virtual DbSet<ChiTietLuuTru> ChiTietLuuTrus { get; set; }
         public virtual DbSet<LuuTru> LuuTru { get; set; }
-        public virtual DbSet<NguoiDung> NguoiDung { get; set; }
-        public virtual DbSet<NguoiNuocNgoai> NguoiNuocNgoai { get; set; }
-        public virtual DbSet<NhanVien> NhanVien { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<TKAdmin> TKAdmin { get; set; }
-        public virtual DbSet<TKNhanVien> TKNhanVien { get; set; }
+        public virtual DbSet<NguoiDung> NguoiDungs { get; set; }
+        public virtual DbSet<NguoiNuocNgoai> NguoiNuocNgoais { get; set; }
+        public virtual DbSet<NhanVien> NhanViens { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<TKAdmin> TKAdmins { get; set; }
+        public virtual DbSet<TKNhanVien> TKNhanViens { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -43,8 +43,17 @@ namespace ModelEF.Model
                 .Property(e => e.MaTKND)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<LuuTru>()
+                .HasMany(e => e.ChiTietLuuTrus)
+                .WithRequired(e => e.LuuTru)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<NguoiDung>()
                 .Property(e => e.MaTKND)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<NguoiDung>()
+                .Property(e => e.MatKhau)
                 .IsUnicode(false);
 
             modelBuilder.Entity<NguoiDung>()
@@ -64,17 +73,21 @@ namespace ModelEF.Model
                 .IsUnicode(false);
 
             modelBuilder.Entity<NguoiDung>()
-                .HasMany(e => e.LuuTru)
+                .HasMany(e => e.LuuTrus)
                 .WithRequired(e => e.NguoiDung)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<NguoiDung>()
-                .HasMany(e => e.NguoiNuocNgoai)
+                .HasMany(e => e.NguoiNuocNgoais)
                 .WithRequired(e => e.NguoiDung)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<NguoiNuocNgoai>()
                 .Property(e => e.MaTKNNN)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<NguoiNuocNgoai>()
+                .Property(e => e.MatKhau)
                 .IsUnicode(false);
 
             modelBuilder.Entity<NguoiNuocNgoai>()
