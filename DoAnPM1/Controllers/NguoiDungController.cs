@@ -80,7 +80,7 @@ namespace DoAnPM1.Controllers
                 }
 
             }
-            return View("DanhSachNNN");
+            return View(model);
         }
     }
 }

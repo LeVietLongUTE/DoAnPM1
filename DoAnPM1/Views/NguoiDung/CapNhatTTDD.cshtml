@@ -458,7 +458,7 @@
                             </li>
                         </ul>
 
-
+                    </div>
 
                 </nav>
             </div><!-- end container-fluid -->
@@ -477,24 +477,25 @@
                 </div>
             </div>
         </div><!-- end page-title -->
+
+        <div class="container-fluid">
+            <nav class="navbar navbar-toggleable-md navbar-inverse">
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto pl-5">
+                        <li class="nav-item nav-tabs">
+                            <a class="nav-link" data-toggle="tab" href="#nnnden" )">Cập nhật thông tin người nước ngoài đến</a>
+                        </li>
+                        <li class="nav-item nav-tabs">
+                            <a class="nav-link" data-toggle="tab" href="#nnndi">Cập nhật thông tin người nước ngoài đi</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
         @using (Html.BeginForm("CapNhatTTDD", "NguoiDung", FormMethod.Post))
         {
             @Html.AntiForgeryToken()
-            <div class="container-fluid">
-                <nav class="navbar navbar-toggleable-md navbar-inverse">
-
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="navbar-nav mr-auto pl-5">
-                            <li class="nav-item nav-tabs">
-                                <a class="nav-link" data-toggle="tab" href="#nnnden" )">Cập nhật thông tin người nước ngoài đến</a>
-                            </li>
-                            <li class="nav-item nav-tabs">
-                                <a class="nav-link" data-toggle="tab" href="#nnndi">Cập nhật thông tin người nước ngoài đi</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
             <div class="row">
                 <div class="col-md-12">
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -509,7 +510,7 @@
                                         </div>
                                         <div class="col-lg-3 ml-5">
                                             <a class="abc">
-                                               
+
                                                 @Html.EditorFor(model => model.MaLT, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.MaLT, "", new { @class = "text-danger" })
                                             </a>
@@ -522,7 +523,11 @@
                                             <h4>Hộ Chiếu/ passport</h4>
                                         </div>
                                         <div class="col-lg-3 ml-5">
-                                            <a class="abcd"> @Html.LabelFor(model => model.MaTKNNN, new { @required = "", @class = "form-control", @placeholder = "" })</a>
+                                            <a class="abcd">
+
+                                                @Html.EditorFor(model => model.MaTKNNN, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.MaTKNNN, "", new { @class = "text-danger" })
+                                            </a>
                                         </div>
 
                                     </div>
@@ -736,7 +741,7 @@
                     </div>
                 </div>
             </div>}
-        </div>
+    </div>
         
     <!-- body -->
     <footer class="footer">
