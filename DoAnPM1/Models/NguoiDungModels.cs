@@ -36,6 +36,7 @@ namespace DoAnPM1.Models
             try
             {
                 LuuTru lt = FindById(LuuTru.MaLT);
+                lt.MaLT = LuuTru.MaLT;
                 lt.NguoiNuocNgoai.HoTen = LuuTru.NguoiNuocNgoai.HoTen;
                 lt.NDKLT = LuuTru.NDKLT;
                 lt.NDLT = LuuTru.NDLT;

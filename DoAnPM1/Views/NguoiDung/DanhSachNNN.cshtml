@@ -488,7 +488,8 @@
             <table class="table "id="customers">
                 <tr>
                     <th>STT</th>
-                    <th>Mã Người Dùng</th>
+                    <th>Mã Lưu trú</th>
+                    <th>Hộ Chiếu/ passport</th>
                     <th>Tên Người Dùng</th>
                     <th>Ngày đến đăng kí</th>
                     <th>Ngày đến Lưu trú</th>
@@ -501,45 +502,46 @@
                 @{ var i = 1;}
                 @foreach (var item in Model)
                 {
-                    <tr id="row_@item.MaLT">
-                        <td> @i </td>
-                        <td> @item.MaTKNNN </td>
-                        <td> @item.NguoiNuocNgoai.HoTen</td>
-                        <td> @item.NDKLT </td>
-                        <td> @item.NDLT </td>
-                        <td> @item.SoPhong </td>
-                        <td> @item.NDDK </td>
-                        <td> @item.NDTT </td>
-                        <td> @item.TrangThai </td>
+            <tr id="row_@item.MaLT">
+                <td> @i </td>
+                <td> @item.MaLT </td>
+                <td> @item.MaTKNNN </td>
+                <td> @item.NguoiNuocNgoai.HoTen</td>
+                <td> @item.NDKLT </td>
+                <td> @item.NDLT </td>
+                <td> @item.SoPhong </td>
+                <td> @item.NDDK </td>
+                <td> @item.NDTT </td>
+                <td> @item.TrangThai </td>
 
 
-                        <td>
+                <td>
 
-                            <a href="/NguoiDung/CapNhatTTDD?idMaLT=@item.MaLT">
-                                <i style="display:inline" class="fa fa-edit"></i>
-                                <p style="display:inline">Edit</p>
-                            </a> |
-                            <a href="#">
-                                <i style="display:inline" class="fa fa-deaf"></i>
-                                <p style="display:inline">Details</p>
-                            </a> |
-                           
-                            <a href="~/Admin/User/index/@item.MaLT"><i style="display:inline" class="fa fa-trash"></i></a>
-                            &nbsp;
-                            @Ajax.ActionLink("Xoá", "Delete", new { @id = item.MaLT }, new AjaxOptions
-                           {
-                            Confirm = "Bạn có muốn xoá " + @item.MaLT + "?",
-                            OnComplete = "$('#row_" + @item.MaLT + "').remove()",
-                            HttpMethod = "Delete"
-                             }, new { @class = "myActionLink" })
-                            <script>
-                                $('.myActionLink').prepend("<i class='fa fa-trash'></i>");
-                            </script>
+                    <a href="/NguoiDung/CapNhatTTDD?idMaLT=@item.MaLT">
+                        <i style="display:inline" class="fa fa-edit"></i>
+                        <p style="display:inline">Edit</p>
+                    </a> |
+                    <a href="#">
+                        <i style="display:inline" class="fa fa-deaf"></i>
+                        <p style="display:inline">Details</p>
+                    </a> |
 
-                        </td>
+                    <a href="~/Admin/User/index/@item.MaLT"><i style="display:inline" class="fa fa-trash"></i></a>
+                    &nbsp;
+                    @Ajax.ActionLink("Xoá", "Delete", new { @id = item.MaLT }, new AjaxOptions
+                   {
+                    Confirm = "Bạn có muốn xoá " + @item.MaLT + "?",
+                    OnComplete = "$('#row_" + @item.MaLT + "').remove()",
+                    HttpMethod = "Delete"
+                     }, new { @class = "myActionLink" })
+                    <script>
+                        $('.myActionLink').prepend("<i class='fa fa-trash'></i>");
+                    </script>
+
+                </td>
 
 
-                    </tr>
+            </tr>
                     i++;
                 }
 
