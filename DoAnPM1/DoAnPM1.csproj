@@ -424,6 +424,7 @@
     <Content Include="Views\NguoiDung\DKTaiKhoanNNN.cshtml" />
     <Content Include="Views\NguoiDung\CapNhatTTDD.cshtml" />
     <Content Include="Views\NguoiDung\DanhSachNNN.cshtml" />
+    <Content Include="Views\NguoiDung\ab\mahi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
