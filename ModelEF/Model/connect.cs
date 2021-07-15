@@ -5,15 +5,15 @@ using System.Linq;
 
 namespace ModelEF.Model
 {
-    public partial class connect : DbContext
+    public partial class Connect : DbContext
     {
-        public connect()
-            : base("name=connect")
+        public Connect()
+            : base("name=Connect")
         {
         }
 
         public virtual DbSet<ChiTietLuuTru> ChiTietLuuTrus { get; set; }
-        public virtual DbSet<LuuTru> LuuTru { get; set; }
+        public virtual DbSet<LuuTru> LuuTrus { get; set; }
         public virtual DbSet<NguoiDung> NguoiDungs { get; set; }
         public virtual DbSet<NguoiNuocNgoai> NguoiNuocNgoais { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }

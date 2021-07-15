@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\ChiTietLuuTru.cs" />
-    <Compile Include="Model\connect.cs" />
+    <Compile Include="Model\Connect.cs" />
     <Compile Include="Model\LuuTru.cs" />
     <Compile Include="Model\NguoiDung.cs" />
     <Compile Include="Model\NguoiNuocNgoai.cs" />

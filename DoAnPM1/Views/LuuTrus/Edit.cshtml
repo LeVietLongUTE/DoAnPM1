@@ -1,8 +1,12 @@
-﻿
+﻿@model ModelEF.Model.LuuTru
 
+@{
+    Layout = null;
+}
 
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
     <!-- Basic -->
     <meta charset="utf-8">
@@ -12,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Site Metas -->
-    <title>Cục Quản Lý Xuất - Nhập Cảnh</title>
+    <title>Cập nhật người nước ngoài đi</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -38,7 +42,9 @@
 
     <!-- Colors for this template -->
     <link href="~/Assets/Client/css/colors.css" rel="stylesheet">
-
+    <link href="~/Assets/Client/css/text.css" rel="stylesheet">
+    <link href="~/Assets/Client/css/text2.css" rel="stylesheet">
+    <link href="~/Assets/Client/css/text3.css" rel="stylesheet">
     <!-- Version Tech CSS for this template -->
     <link href="~/Assets/Client/css/version/tech.css" rel="stylesheet">
 
@@ -49,7 +55,6 @@
     <![endif]-->
 </head>
 <body>
-
     <div id="wrapper">
 
 
@@ -448,7 +453,7 @@
                                     <li><a href="#" class="ml-1 p-2"><i class=" fa fa-suitcase"></i> <span class="ml-1 p-2">Cập nhật thông tin </span> </a></li>
                                     <li><a href="@Url.Action("DKTaiKhoanNNN", "NguoiDung")" class="ml-1 p-2"><i class="fa fa-user-plus"></i> <span class="ml-1 p-2">Đăng kí tài khoản NNN</span>  </a></li>
 
-                                    <li><a href="@Url.Action("CapNhatTTDD", "NguoiDung")" class="ml-1 p-1"><i class=" fa fa-suitcase"></i> <span class="ml-1 p-2">Cập nhật thông tin đến/đi </span> </a></li>
+                                    <li><a href="@Url.Action("DanhSachNNN", "NguoiDung")" class="ml-1 p-1"><i class=" fa fa-suitcase"></i> <span class="ml-1 p-2">Cập nhật thông tin đến/đi </span> </a></li>
 
                                     <li>
                                         <a href="#" class="ml-1 p-2">
@@ -459,452 +464,223 @@
                             </li>
                         </ul>
 
-
+                    </div>
 
                 </nav>
             </div><!-- end container-fluid -->
 
         </header><!-- end market-header -->
-        <!-- body -->
-        <section class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-                        <div class="page-wrapper">
-                            <div class="blog-top clearfix">
-                                <h4 class="pull-left">Recent News <a href="#"><i class="fa fa-rss"></i></a></h4>
-                            </div><!-- end blog-top -->
+    </div>
+    <!-- body -->
+    <div class="page-title mt-0 pt-2">
+        <div class="container mt-0 ">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="breadcrumbstyle clearfix text-uppercase ">
+                        <li class="breadcrumb-item"><a href="@Url.Action("Index","NguoiDung")">Trang chủ</a></li>
+                        <li class="breadcrumb-item active">Cập nhật thông tin người nước ngoài đi</li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- end page-title -->
 
-                            <div class="blog-list clearfix">
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="#" title="">
-                                                <img src="~/Assets/client/images/img/visa.jpg" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
+        <div class=”container”>
+            <div>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="#" title="">Hướng dẫn làm thủ tục thông hành xuất, nhập cảnh vùng biên giới Việt Nam</a></h4>
-                                        <p> 1. Những trường hợp được cấp giấy thông hành: - Công dân Việt Nam thường trú tại các phường, xã, thị trấn tiếp giáp đường biên giới Việt Nam - Trung Quốc; - Cán bộ, công chức làm việc tại các cơ...</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Tin tức</a></small>
-                                        <small><a href="#" title="">21 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 1114</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="#" title="">
-                                                <img src="~/Assets/client/images/img/visa.jpg" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="#" title="">Hướng dẫn thủ tục cấp giấy thông hành biên giới Việt Nam - Lào</a></h4>
-                                        <p>1. Những trường hợp được cấp giấy thông hành: - Công dân Việt Nam có hộ khẩu thường trú tại tỉnh có chung đường biên giới với Lào; - Công dân Việt Nam không có hộ khẩu thường trú ở các tỉnh có chung...</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Tin tức</a></small>
-                                        <small><a href="#" title="">21 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 4412</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="#" title="">
-                                                <img src="~/Assets/client/images/img/iam.jpg" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="#" title="">THỦ TỤC CẤP THẺ TẠM TRÚ CHO NGƯỜI NƯỚC NGOÀI TẠI CỤC QUẢN LÝ XUẤT NHẬP CẢNH, BỘ...</a></h4>
-                                        <p>Cách thức thực hiện: Bước 1: Chuẩn bị hồ sơ theo quy định của pháp luật. Bước 2: Nộp hồ sơ: 1. Cơ quan, tổ chức, cá nhân nộp hồ sơ tại một trong ba trụ sở làm việc của Cục Quản lý xuất nhập cảnh - Bộ...</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Tin tức</a></small>
-                                        <small><a href="#" title="">20 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 2313</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-
-
-                                <hr class="invis">
-
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="#" title="">
-                                                <img src="~/Assets/client/images/img/iam.jpg" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="#" title="">HƯỚNG DẪN THỦ TỤC KHAI BÁO TẠM TRÚ CHO NNN TẠI VIỆT NAM BẰNG PHIẾU KHAI BÁO TẠM...</a></h4>
-                                        <p> Bước 1: Người khai báo tạm trú tiếp nhận thông tin tạm trú của người nước ngoài. Bước 2: Khai, nộp Phiếu khai báo tạm trú cho trực ban Công an xã, phường, thị trấn hoặc đồn, trạm Công an (sau đây...</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Thông báo</a></small>
-                                        <small><a href="#" title="">19 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 4441</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="#" title="">
-                                                <img src="~/Assets/client/images/img/abtfs.jpg" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="#" title="">Hội nghị ký Quy chế phối hợp giữa Bộ Tư lệnh Bộ đội Biên phòng và Cục Quản lý...</a></h4>
-                                        <p>Ngày 28/6/2021, tại Hà Nội, Cục Quản lý xuất nhập cảnh, Bộ Công an và Bộ Tư lệnh Bộ đội Biên phòng, Bộ Quốc phòng đã tổ chức thành công Hội nghị ký Quy chế phối hợp giữa Bộ Tư lệnh Bộ đội Biên phòng...</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Tin tức</a></small>
-                                        <small><a href="#" title="">18 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 33312</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="#" title="">
-                                                <img src="~/Assets/client/images/img/aga.jpg" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="#" title="">HƯỚNG DẪN THỦ TỤC CẤP LẠI THẺ ABTC</a></h4>
-                                        <p>1. Hồ sơ gồm:           - 01 tờ khai mẫu X05;           - 02 ảnh mới chụp, cỡ 3cm x 4cm, mặt nhìn thẳng, đầu để trần, không đeo kính màu, phông nền màu trắng;           - Tùy từng trường hợp cụ thể...</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Tin tức</a></small>
-                                        <small><a href="#" title="">17 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 4440</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="#" title="">
-                                                <img src="~/Assets/client/images/img/visa.jpg" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="#" title="">HƯỚNG DẪN KHAI TỜ KHAI ĐIỆN TỬ ĐỀ NGHỊ CẤP HỘ CHIẾU PHỔ THÔNG</a></h4>
-                                        <p>Công dân Việt Nam thường trú ở trong nước có nhu cầu cấp, sửa đổi, bổ sung hộ chiếu phổ thông có thể truy cập vào hệ thống điện tử của Cục Quản lý xuất nhập cảnh để khai tờ khai điện tử và đặt lịch...</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Tin tức</a></small>
-                                        <small><a href="#" title="">16 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 4412</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="#" title="">
-                                                <img src="~/Assets/client/images/img/iam.jpg" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="#" title="">HƯỚNG DẪN THỦ TỤC GIA HẠN TẠM TRÚ CHO NGƯỜI ĐÃ ĐƯỢC CẤP GIẤY MIỄN THỊ THỰC</a></h4>
-                                        <p>Trình tự thực hiện:           Bước1: Chuẩn bị hồ sơ theo quy định.           Bước 2: Nộp hồ sơ tại một trong ba trụ sở làm việc của Cục Quản lý xuất nhập cảnh – Bộ Công an:           + 44-46 Trần Phú...</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Thông báo</a></small>
-                                        <small><a href="#" title="">15 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 44123</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="#" title="">
-                                                <img src="~/Assets/client/images/img/iam.jpg" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="#" title="">HƯỚNG DẪN THỦ TỤC CẤP GIẤY MIỄN THỊ THỰC CHO NGƯỜI VIỆT NAM ĐỊNH CƯ Ở NƯỚC...</a></h4>
-                                        <p> Trình tự thực hiện :           Bước 1: Chuẩn bị hồ sơ theo quy định của pháp luật.            Bước 2: Người Việt Nam định cư ở nước ngoài đề nghị cấp giấy miễn thị thực cho bản thân và thân nhân nộp...</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Thông báo</a></small>
-                                        <small><a href="#" title="">14 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 2214</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <a href="#" title="">
-                                                <img src="~/Assets/client/images/img/visa.jpg" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
-                                            </a>
-                                        </div><!-- end media -->
-                                    </div><!-- end col -->
-
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4><a href="#" title="">Hướng dẫn thủ tục cấp hộ chiếu phổ thông từ lần thứ hai</a></h4>
-                                        <p> 1. Hồ sơ gồm: - 01 tờ khai theo mẫu; - 02 ảnh mới chụp, cỡ 4cm x 6cm, mặt nhìn thẳng, đầu để trần, không đeo kính màu, phông nền màu trắng. - Hộ chiếu phổ thông cấp lần gần nhất đối với người đã...</p>
-                                        <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Tin tức</a></small>
-                                        <small><a href="#" title="">13 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 3331</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-                            </div><!-- end blog-list -->
-                        </div><!-- end page-wrapper -->
-
-                        <hr class="invis">
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <nav aria-label="Page navigation">
-                                    <ul class="pagination justify-content-start">
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">Next</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div><!-- end col -->
-                        </div><!-- end row -->
-                    </div><!-- end col -->
-
-                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-                        <div class="sidebar">
-                            <div class="widget">
-                                <div class="banner-spot clearfix">
-                                    <div class="banner-img">
-                                        <img src="~/Assets/client/images/img/tsk.png" alt="" class="img-fluid">
-                                    </div><!-- end banner-img -->
-                                </div><!-- end banner -->
-                            </div><!-- end widget -->
-
-                            <div class="widget">
-                                <h2 class="widget-title">Trend Videos</h2>
-                                <div class="trend-videos">
-                                    <div class="blog-box">
-                                        <div class="post-media">
-                                            <a href="#" title="">
-                                                <img src="~/Assets/client/images/img/For Foreigners.png" alt="" class="img-fluid">
-                                                <div class="hovereffect">
-                                                    <span class="videohover"></span>
-                                                </div><!-- end hover -->
-                                            </a>
-                                        </div><!-- end media -->
-                                        <div class="blog-meta">
-                                            <h4><a href="#" title="">We prepared the best 10 laptop presentations for you</a></h4>
-                                        </div><!-- end meta -->
-                                    </div><!-- end blog-box -->
-
-                                    <hr class="invis">
-
-                                    <div class="blog-box">
-                                        <div class="post-media">
-                                            <a href="#" title="">
-                                                <img src="~/Assets/client/images/img/bc1_0.jpg" alt="" class="img-fluid">
-                                                <div class="hovereffect">
-                                                    <span class="videohover"></span>
-                                                </div><!-- end hover -->
-                                            </a>
-                                        </div><!-- end media -->
-                                        <div class="blog-meta">
-                                            <h4><a href="#" title="">We are guests of ABC Design Studio - Vlog</a></h4>
-                                        </div><!-- end meta -->
-                                    </div><!-- end blog-box -->
-
-                                    <hr class="invis">
-
-                                    <div class="blog-box">
-                                        <div class="post-media">
-                                            <a href="#" title="">
-                                                <img src="~/Assets/client/images/img/bcqh_0.jpg" alt="" class="img-fluid">
-                                                <div class="hovereffect">
-                                                    <span class="videohover"></span>
-                                                </div><!-- end hover -->
-                                            </a>
-                                        </div><!-- end media -->
-                                        <div class="blog-meta">
-                                            <h4><a href="#" title="">Both blood pressure monitor and intelligent clock</a></h4>
-                                        </div><!-- end meta -->
-                                    </div><!-- end blog-box -->
-                                </div><!-- end videos -->
-                            </div><!-- end widget -->
-
-                            <div class="widget">
-                                <h2 class="widget-title">Popular Posts</h2>
-                                <div class="blog-list-widget">
-                                    <div class="list-group">
-                                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                                            <div class="w-100 justify-content-between">
-                                                <img src="~/Assets/client/images/img/iam.jpg" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1">5 Beautiful buildings you need..</h5>
-                                                <small>12 Jan, 2016</small>
-                                            </div>
-                                        </a>
-
-                                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                                            <div class="w-100 justify-content-between">
-                                                <img src="~/Assets/client/images/img/iam.jpg" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1">Let's make an introduction for..</h5>
-                                                <small>11 Jan, 2016</small>
-                                            </div>
-                                        </a>
-
-                                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                                            <div class="w-100 last-item justify-content-between">
-                                                <img src="~/Assets/client/images/img/iam.jpg" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1">Did you see the most beautiful..</h5>
-                                                <small>07 Jan, 2016</small>
-                                            </div>
-                                        </a>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.MaLT)
+                    <div class="col text-center p-4">
+                        <h2 class="center-block">Cập nhật thông tin lưu trú người nước ngoài đến và đi</h2>
+                    </div>
+                    <div class="col-md-8 justify-content-center mx-auto">
+                        <div class="row pt-5">
+                            <ul class="col-md-6 pl-5 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 ">
+                                        <h4>Mã Lưu Trú</h4>
                                     </div>
-                                </div><!-- end blog-list -->
-                            </div><!-- end widget -->
-
-                            <div class="widget">
-                                <h2 class="widget-title">Recent Reviews</h2>
-                                <div class="blog-list-widget">
-                                    <div class="list-group">
-                                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                                            <div class="w-100 justify-content-between">
-                                                <img src="~/Assets/client/images/img/iam.jpg" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1">Banana-chip chocolate cake recipe..</h5>
-                                                <span class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </span>
-                                            </div>
-                                        </a>
-
-                                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                                            <div class="w-100 justify-content-between">
-                                                <img src="~/Assets/client/images/img/iam.jpg" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1">10 practical ways to choose organic..</h5>
-                                                <span class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </span>
-                                            </div>
-                                        </a>
-
-                                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                                            <div class="w-100 last-item justify-content-between">
-                                                <img src="~/Assets/client/images/img/iam.jpg" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1">We are making homemade ravioli..</h5>
-                                                <span class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div><!-- end blog-list -->
-                            </div><!-- end widget -->
-
-                            <div class="widget">
-                                <h2 class="widget-title">Follow Us</h2>
-
-                                <div class="row text-center">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <a href="#" class="social-button facebook-button">
-                                            <i class="fa fa-facebook"></i>
-                                            <p>27k</p>
-                                        </a>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <a href="#" class="social-button twitter-button">
-                                            <i class="fa fa-twitter"></i>
-                                            <p>98k</p>
-                                        </a>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <a href="#" class="social-button google-button">
-                                            <i class="fa fa-google-plus"></i>
-                                            <p>17k</p>
-                                        </a>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                        <a href="#" class="social-button youtube-button">
-                                            <i class="fa fa-youtube"></i>
-                                            <p>22k</p>
+                                    <div class="col-lg-3 ml-5">
+                                        <a class="abc">
+                                            @Html.EditorFor(model => model.MaLT, new { htmlAttributes = new { @readonly = "readonly" } })
+                                            @Html.ValidationMessageFor(model => model.MaLT, "", new { @class = "text-danger" })
                                         </a>
                                     </div>
                                 </div>
-                            </div><!-- end widget -->
+                            </ul>
+                            <ul class="col-md-6 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 mr-4 ">
+                                        <h4>Hộ Chiếu/ passport</h4>
+                                    </div>
+                                    <div class="col-lg-3 ml-5">
+                                        <a class="abcd">
+                                            @Html.EditorFor(model => model.MaTKNNN, new { htmlAttributes = new { @readonly = "readonly" } })
+                                            @Html.ValidationMessageFor(model => model.MaTKNNN, "", new { @class = "text-danger" })
+                                        </a>
+                                    </div>
 
-                            <div class="widget">
-                                <div class="banner-spot clearfix">
-                                    <div class="banner-img">
-                                        <img src="~/Assets/client/images/img/logo_1.png" alt="" class="img-fluid">
-                                    </div><!-- end banner-img -->
-                                </div><!-- end banner -->
-                            </div><!-- end widget -->
-                        </div><!-- end sidebar -->
-                    </div><!-- end col -->
-                </div><!-- end row -->
-            </div><!-- end container -->
-        </section>
+                                </div>
+                            </ul>
+                        </div>
+
+
+                        <div class="row pt-0">
+                            <ul class="col-md-6 pl-5 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 ">
+                                        <h4>Mã TK người dùng</h4>
+                                    </div>
+                                    <div class="col-lg-3 ml-5">
+                                        <a class="abc">
+                                            @Html.EditorFor(model => model.MaTKND, new { htmlAttributes = new { @readonly = "readonly" } })
+                                            @Html.ValidationMessageFor(model => model.MaTKND, "", new { @class = "text-danger" })
+                                        </a>
+                                    </div>
+                                </div>
+                            </ul>
+                            <ul class="col-md-6 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 mr-4 ">
+                                        <h4>Số phòng</h4>
+                                    </div>
+                                    <div class="col-lg-3 ml-3">
+                                        <a class="abcde">
+                                            @Html.EditorFor(model => model.SoPhong, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.SoPhong, "", new { @class = "text-danger" })
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="row pt-0">
+                            <ul class="col-md-6 pl-5 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 ">
+                                        <h4>Ngày đăng kí lưu trú</h4>
+                                    </div>
+                                    <div class="col-lg-3 ml-5 mr-2">
+                                        <a class="abcz">
+                                            @Html.TextBoxFor(model => model.NDKLT, "{0:yyyy-MM-ddThh:mm:ss}", new { @readonly = "readonly ", type = "datetime-local" })
+                                            @Html.ValidationMessageFor(model => model.NDKLT, "", new { @class = "text-danger" })
+                                        </a>
+                                    </div>
+                                </div>
+                            </ul>
+                            <ul class="col-md-6 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 mr-4 ">
+                                        <h4>Ngày đi dự kiến</h4>
+                                    </div>
+                                    <div class="col-lg-3 ml-5">
+                                        <a class="abcd">
+                                            @Html.TextBoxFor(model => model.NDDK, "{0:yyyy-MM-ddThh:mm:ss}", new { @readonly = "readonly", type = "datetime-local" })
+                                            @Html.ValidationMessageFor(model => model.NDDK, "", new { @class = "text-danger" })
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="row pt-0">
+                            <ul class="col-md-6 pl-5 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 ">
+                                        <h4>Ngày đến lưu trú</h4>
+                                    </div>
+                                    <div class="col-lg-3 ml-5">
+                                        <a class="abc">
+                                            @Html.TextBoxFor(model => model.NDLT, "{0:yyyy-MM-ddThh:mm:ss}", new { @class = "form-control ", type = "datetime-local" })
+                                            @Html.ValidationMessageFor(model => model.NDLT, "", new { @class = "text-danger" })
+                                        </a>
+                                    </div>
+                                </div>
+                            </ul>
+                            <ul class="col-md-6 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 mr-4 ">
+                                        <h4>Ngày đi thực tế</h4>
+                                    </div>
+                                    <div class="col-lg-3 ml-5">
+                                        <a class="abcd">
+                                            @Html.TextBoxFor(model => model.NDTT, "{0:yyyy-MM-ddThh:mm:ss}", new { @class = "form-control ", type = "datetime-local" })
+                                            @Html.ValidationMessageFor(model => model.NDTT, "", new { @class = "text-danger" })
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="row pt-0">
+                            <ul class="col-md-6 pl-5 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 ">
+                                        <h4>Cơ sở kinh doanh</h4>
+                                    </div>
+                                    <div class="col-lg-3 ml-5">
+                                        <a class="abc">
+                                            @Html.EditorFor(model => model.NguoiDung.TenCSKD, new { htmlAttributes = new { @readonly = "readonly" } })
+                                            @Html.ValidationMessageFor(model => model.NguoiDung.TenCSKD, "", new { @class = "text-danger" })
+                                        </a>
+                                    </div>
+                                </div>
+                            </ul>
+                            <ul class="col-md-6 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 mr-4 ">
+                                        <h4>Trạng thái</h4>
+                                    </div>
+                                    <div class="col-lg-3 ml-5">
+                                        <a class="abcd">
+                                            @Html.DropDownList("TrangThai", new List<SelectListItem>
+                            {
+                                new SelectListItem
+                                {
+                                    Text = "Đang ở", Value = "Đang ở"
+                                },
+                                new SelectListItem
+                                {
+                                    Text = "Không ở", Value = "Không ở"
+                                }
+                            })
+
+                                            @Html.ValidationMessageFor(model => model.TrangThai, "", new { @class = "text-danger" })
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="row pt-0">
+                            <ul class="col-md-6 pl-5 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 ">
+                                        <h4>Địa chỉ Kinh doanh</h4>
+                                    </div>
+                                    <div class="col-lg-3 ml-5">
+                                        <a class="abc">
+                                            @Html.EditorFor(model => model.NguoiDung.DiaChiKD, new { htmlAttributes = new { @readonly = "readonly" } })
+                                            @Html.ValidationMessageFor(model => model.NguoiDung.DiaChiKD, "", new { @class = "text-danger" })
+                                        </a>
+                                    </div>
+                                </div>
+                            </ul>
+                           
+                        </div>
+
+                    </div>
+                       
+                    <div class="buton p-5">
+                        <button type="submit" class="btnn btn-primary">Cập nhật </button>
+                    </div>
+               
+                }
+            </div>
+        </div>
+    </div>
         <!-- body -->
         <footer class="footer">
             <div class="container">
@@ -973,19 +749,47 @@
                 </div>
             </div><!-- end container -->
         </footer><!-- end footer -->
-
-
-
-
-    </div><!-- end wrapper -->
+    <!-- end wrapper -->
     <!-- Core JavaScript
     ================================================== -->
     <script src="~/Assets/Client/js/jquery.min.js"></script>
     <script src="~/Assets/Client/js/tether.min.js"></script>
     <script src="~/Assets/Client/js/bootstrap.min.js"></script>
     <script src="~/Assets/Client/js/custom.js"></script>
-    
+
+
+
+
 
 </body>
 </html>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 
+    <script src="~/Scripts/globalize/globalize.js"></script>
+    <script src="~/Scripts/globalize/cultures/globalize.culture.@(System.Threading.Thread.CurrentThread.CurrentCulture.Name).js"></script>
+    <script>
+    $.validator.methods.number = function (value, element) {
+        return this.optional(element) ||
+            !isNaN(Globalize.parseFloat(value));
+    }
+    $(document).ready(function () {
+        Globalize.culture('@(System.Threading.Thread.CurrentThread.CurrentCulture.Name)');
+    });
+    </script>
+    <script>
+        jQuery.extend(jQuery.validator.methods, {
+            range: function (value, element, param) {
+                //Use the Globalization plugin to parse the value
+                var val = Globalize.parseFloat(value);
+                return this.optional(element) || (
+                    val >= param[0] && val <= param[1]);
+            }
+        });
+        $.validator.methods.date = function (value, element) {
+            return this.optional(element) ||
+                Globalize.parseDate(value) ||
+                Globalize.parseDate(value, "yyyy-MM-dd");
+        }
+    </script>
+}

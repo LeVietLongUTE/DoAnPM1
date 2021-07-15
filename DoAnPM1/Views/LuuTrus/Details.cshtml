@@ -1,0 +1,90 @@
+﻿@model ModelEF.Model.LuuTru
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>LuuTru</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NguoiDung.HoTen)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NguoiDung.HoTen)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NguoiNuocNgoai.HoTen)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NguoiNuocNgoai.HoTen)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SoPhong)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SoPhong)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NDKLT)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NDKLT)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NDLT)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NDLT)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NDDK)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NDDK)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NDTT)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NDTT)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TrangThai)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TrangThai)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MaLT }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

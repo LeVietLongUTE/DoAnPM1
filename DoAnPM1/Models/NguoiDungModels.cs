@@ -9,18 +9,18 @@ namespace DoAnPM1.Models
 {
     public class NguoiDungModels
     {
-        private connect db = null;
+        private Connect db = null;
         public NguoiDungModels()
         {
-            db = new connect();
+            db = new Connect();
         }
         public IEnumerable<LuuTru> ListAll()
         {
-            return db.LuuTru.ToList();
+            return db.LuuTrus.ToList();
         }
         public IEnumerable<LuuTru> ListWhereAll(string searchString, int page, int pagesize)
         {
-            IQueryable<LuuTru> mode = db.LuuTru;
+            IQueryable<LuuTru> mode = db.LuuTrus;
             if (!string.IsNullOrEmpty(searchString))
             {
                 mode = mode.Where(x => x.MaTKNNN.Contains(searchString));
@@ -28,16 +28,16 @@ namespace DoAnPM1.Models
             return mode.OrderBy(x => x.MaTKNNN).ToPagedList(page, pagesize);
         }
         public LuuTru FindById(string MaLT)
-        {            
-            return db.LuuTru.Find(MaLT);
+        {         
+            return db.LuuTrus.Find(MaLT);
         }
         public bool Edit(LuuTru LuuTru)
         {
             try
             {
-                LuuTru lt = FindById(LuuTru.MaLT);
+                LuuTru lt = FindById(LuuTru.MaLT.Trim());
                 lt.MaLT = LuuTru.MaLT;
-                lt.NguoiNuocNgoai.HoTen = LuuTru.NguoiNuocNgoai.HoTen;
+                lt.MaTKNNN = LuuTru.MaTKNNN;
                 lt.NDKLT = LuuTru.NDKLT;
                 lt.NDLT = LuuTru.NDLT;
                 lt.SoPhong = LuuTru.SoPhong;
@@ -52,7 +52,11 @@ namespace DoAnPM1.Models
             {
                 return false;
             }
-        }
 
+        }
+        public LuuTru FindIDLT(string MaLT)
+        {
+            return db.LuuTrus.Find(MaLT);
+        }
     }
 }
