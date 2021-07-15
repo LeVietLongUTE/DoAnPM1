@@ -1,12 +1,12 @@
-﻿@using PagedList.Mvc;
-@using PagedList;
-@model PagedList.IPagedList<ModelEF.Model.LuuTru>
+﻿@model ModelEF.Model.LuuTru
 
-
-
-
+@{
+    Layout = null;
+}
+  
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
     <!-- Basic -->
     <meta charset="utf-8">
@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Site Metas -->
-    <title>Đăng kí tài khoản người nước ngoài</title>
+    <title>Cập nhật người nước ngoài đi</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -43,7 +43,8 @@
     <!-- Colors for this template -->
     <link href="~/Assets/Client/css/colors.css" rel="stylesheet">
     <link href="~/Assets/Client/css/text.css" rel="stylesheet">
-    <link href="~/Assets/Client/css/text1.css" rel="stylesheet">
+    <link href="~/Assets/Client/css/text2.css" rel="stylesheet">
+    <link href="~/Assets/Client/css/text3.css" rel="stylesheet">
     <!-- Version Tech CSS for this template -->
     <link href="~/Assets/Client/css/version/tech.css" rel="stylesheet">
 
@@ -54,7 +55,6 @@
     <![endif]-->
 </head>
 <body>
-
     <div id="wrapper">
 
 
@@ -453,7 +453,7 @@
                                     <li><a href="#" class="ml-1 p-2"><i class=" fa fa-suitcase"></i> <span class="ml-1 p-2">Cập nhật thông tin </span> </a></li>
                                     <li><a href="@Url.Action("DKTaiKhoanNNN", "NguoiDung")" class="ml-1 p-2"><i class="fa fa-user-plus"></i> <span class="ml-1 p-2">Đăng kí tài khoản NNN</span>  </a></li>
 
-                                    <li><a href="@Url.Action("CapNhatTTDD", "NguoiDung")" class="ml-1 p-1"><i class=" fa fa-suitcase"></i> <span class="ml-1 p-2">Cập nhật thông tin đến/đi </span> </a></li>
+                                    <li><a href="@Url.Action("DanhSachNNN", "NguoiDung")" class="ml-1 p-1"><i class=" fa fa-suitcase"></i> <span class="ml-1 p-2">Cập nhật thông tin đến/đi </span> </a></li>
 
                                     <li>
                                         <a href="#" class="ml-1 p-2">
@@ -464,7 +464,7 @@
                             </li>
                         </ul>
 
-
+                    </div>
 
                 </nav>
             </div><!-- end container-fluid -->
@@ -478,81 +478,164 @@
                 <div class="col-md-12">
                     <ul class="breadcrumbstyle clearfix text-uppercase ">
                         <li class="breadcrumb-item"><a href="@Url.Action("Index","NguoiDung")">Trang chủ</a></li>
-                        <li class="breadcrumb-item active">Cập nhật thông tin NNN đến và đi</li>
+                        <li class="breadcrumb-item active">Cập nhật thông tin người nước ngoài đi</li>
                     </ul>
                 </div>
             </div>
         </div><!-- end page-title -->
 
-        <div class="col-lg-12 form-group" style="margin-top:15px">
-            <table class="table "id="customers">
-                <tr>
-                    <th>STT</th>
-                    <th>Mã Lưu trú</th>
-                    <th>Hộ Chiếu/ passport</th>
-                    <th>Tên Người Dùng</th>
-                    <th>Ngày đến đăng kí</th>
-                    <th>Ngày đến Lưu trú</th>
-                    <th>Số Phòng</th>
-                    <th>Ngày đi dự kiến</th>
-                    <th>Ngày đi thực tế</th>
-                    <th>tình trạng</th>
-                    <th>hoạt động</th>
-                </tr>
-                @{ var i = 1;}
-                @foreach (var item in Model)
+        <div class=”container”>
+            <div>
+                @using (Html.BeginForm())
                 {
-            <tr id="row_@item.MaLT">
-                <td> @i </td>
-                <td> @item.MaLT </td>
-                <td> @item.MaTKNNN </td>
-                <td> @item.NguoiNuocNgoai.HoTen</td>
-                <td> @item.NDKLT </td>
-                <td> @item.NDLT </td>
-                <td> @item.SoPhong </td>
-                <td> @item.NDDK </td>
-                <td> @item.NDTT </td>
-                <td> @item.TrangThai </td>
+                    @Html.AntiForgeryToken()
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="col text-center p-4">
+                        <h2 class="center-block">Cập nhật thông tin lưu trú người nước ngoài đến và đi</h2>
+                    </div>
+                    <div class="col-md-8 justify-content-center mx-auto">
+                        <div class="row pt-5">
+                            <ul class="col-md-6 pl-5 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 ">
+                                        <h4>Mã Lưu Trú</h4>
+                                    </div>
+                                    <div class="col-lg-3 ml-5">
+                                        <a class="abc">
+                                           
+                                            @Html.EditorFor(model => model.MaLT, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.MaLT, "", new { @class = "text-danger" })
+                                        </a>
+                                    </div>
+                                </div>
+                            </ul>
+                            <ul class="col-md-6 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 mr-4 ">
+                                        <h4>Mã TK người nước ngoài</h4>
+                                    </div>
+                                    <div class="col-lg-3 ml-5">
+                                        <a class="abcd">
+                                            @Html.DropDownList("MaTKNNN", null, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.MaTKNNN, "", new { @class = "text-danger" })
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </ul>
+                        </div>
 
 
-                <td>
+                        <div class="row pt-0">
+                            <ul class="col-md-6 pl-5 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 ">
+                                        <h4>Mã TK người dùng</h4>
+                                    </div>
+                                    <div class="col-lg-3 ml-5">
+                                        <a class="abc">
+                                            @Html.DropDownList("MaTKND", null, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.MaTKND, "", new { @class = "text-danger" })
+                                        </a>
+                                    </div>
+                                </div>
+                            </ul>
+                            <ul class="col-md-6 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 mr-4 ">
+                                        <h4>Số phòng</h4>
+                                    </div>
+                                    <div class="col-lg-3 ml-3">
+                                        <a class="abcde">
+                                            @Html.EditorFor(model => model.SoPhong, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.SoPhong, "", new { @class = "text-danger" })
+                                        </a>
+                                    </div>
 
-                    <a href="/NguoiDung/CapNhatTTDD?idMaLT=@item.MaLT">
-                        <i style="display:inline" class="fa fa-edit"></i>
-                        <p style="display:inline">Edit</p>
-                    </a> |
-                    <a href="#">
-                        <i style="display:inline" class="fa fa-deaf"></i>
-                        <p style="display:inline">Details</p>
-                    </a> |
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="row pt-0">
+                            <ul class="col-md-6 pl-5 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 ">
+                                        <h4>Ngày đăng kí lưu trú</h4>
+                                    </div>
+                                    <div class="col-lg-3 ml-5 mr-2">
+                                        <a class="abc">
+                                            @Html.TextBoxFor(model => model.NDKLT, "{0:yyyy-MM-ddThh:mm:ss}", new { @class = "form-control", type = "datetime-local" })
+                                            @Html.ValidationMessageFor(model => model.NDKLT, "", new { @class = "text-danger" })
+                                        </a>
+                                    </div>
+                                </div>
+                            </ul>
+                            <ul class="col-md-6 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 mr-4 ">
+                                        <h4>Ngày đi dự kiến</h4>
+                                    </div>
+                                    <div class="col-lg-3 ml-5">
+                                        <a class="abcd">
+                                            @Html.TextBoxFor(model => model.NDDK, "{0:yyyy-MM-ddThh:mm:ss}", new { @class = "form-control", type = "datetime-local" })
+                                            @Html.ValidationMessageFor(model => model.NDDK, "", new { @class = "text-danger" })
+                                        </a>
+                                    </div>
 
-                    <a href="~/Admin/User/index/@item.MaLT"><i style="display:inline" class="fa fa-trash"></i></a>
-                    &nbsp;
-                    @Ajax.ActionLink("Xoá", "Delete", new { @id = item.MaLT }, new AjaxOptions
-                   {
-                    Confirm = "Bạn có muốn xoá " + @item.MaLT + "?",
-                    OnComplete = "$('#row_" + @item.MaLT + "').remove()",
-                    HttpMethod = "Delete"
-                     }, new { @class = "myActionLink" })
-                    <script>
-                        $('.myActionLink').prepend("<i class='fa fa-trash'></i>");
-                    </script>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="row pt-0">
+                            <ul class="col-md-6 pl-5 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 ">
+                                        <h4>Ngày đến lưu trú</h4>
+                                    </div>
+                                    <div class="col-lg-3 ml-5">
+                                        <a class="abc">
+                                            @Html.TextBoxFor(model => model.NDLT, "{0:yyyy-MM-ddThh:mm:ss}", new { @class = "form-control", type = "datetime-local" })
+                                            @Html.ValidationMessageFor(model => model.NDLT, "", new { @class = "text-danger" })</a>
+                                    </div>
+                                </div>
+                            </ul>
+                            <ul class="col-md-6 ">
+                                <div class="row  ">
+                                    <div class="col-lg-3 mr-4 ">
+                                        <h4>Trạng thái</h4>
+                                    </div>
+                                    <div class="col-lg-3 ml-5">
+                                        <a class="abcd">
+                                            @Html.DropDownList("TrangThai", new List<SelectListItem>
+                            {
+                                new SelectListItem
+                                {
+                                    Text = "Đang ở", Value = "Đang ở"
+                                },
+                                new SelectListItem
+                                {
+                                    Text = "Không ở", Value = "Không ở"
+                                }
+                            })
 
-                </td>
+                                            @Html.ValidationMessageFor(model => model.TrangThai, "", new { @class = "text-danger" })
+                                        </a>
+                                    </div>
 
+                                </div>
+                            </ul>
+                        </div>
+                       
 
-            </tr>
-                    i++;
+                    </div>
+
+                    <div class="buton p-5">
+                        <button type="submit" class="btnn btn-primary">Thêm Mới </button>
+                    </div>
+
                 }
-
-
-            </table>
-            <div class="pagelist"> <a>
-    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index",
-new { page, @searchString = @ViewBag.SearchString }))
-        </a>  
             </div>
         </div>
+    </div>
     <!-- body -->
     <footer class="footer">
         <div class="container">
@@ -621,7 +704,7 @@ new { page, @searchString = @ViewBag.SearchString }))
             </div>
         </div><!-- end container -->
     </footer><!-- end footer -->
-    </div><!-- end wrapper -->
+    <!-- end wrapper -->
     <!-- Core JavaScript
     ================================================== -->
     <script src="~/Assets/Client/js/jquery.min.js"></script>
@@ -630,12 +713,38 @@ new { page, @searchString = @ViewBag.SearchString }))
     <script src="~/Assets/Client/js/custom.js"></script>
 
 
+
+
+
 </body>
 </html>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 
-
-
-
-
-
-
+    <script src="~/Scripts/globalize/globalize.js"></script>
+    <script src="~/Scripts/globalize/cultures/globalize.culture.@(System.Threading.Thread.CurrentThread.CurrentCulture.Name).js"></script>
+    <script>
+    $.validator.methods.number = function (value, element) {
+        return this.optional(element) ||
+            !isNaN(Globalize.parseFloat(value));
+    }
+    $(document).ready(function () {
+        Globalize.culture('@(System.Threading.Thread.CurrentThread.CurrentCulture.Name)');
+    });
+    </script>
+    <script>
+        jQuery.extend(jQuery.validator.methods, {
+            range: function (value, element, param) {
+                //Use the Globalization plugin to parse the value
+                var val = Globalize.parseFloat(value);
+                return this.optional(element) || (
+                    val >= param[0] && val <= param[1]);
+            }
+        });
+        $.validator.methods.date = function (value, element) {
+            return this.optional(element) ||
+                Globalize.parseDate(value) ||
+                Globalize.parseDate(value, "yyyy-MM-dd");
+        }
+    </script>
+}

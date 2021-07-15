@@ -1,0 +1,10 @@
+﻿.lt {
+    display: block;
+    width: 250px;
+}
+lta {
+    text-align: left;
+    padding-top: 5px;
+    display: block;
+    width: 200px;
+}

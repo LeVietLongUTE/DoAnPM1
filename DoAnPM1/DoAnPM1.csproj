@@ -134,6 +134,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\Controller\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LuuTrusController.cs" />
     <Compile Include="Controllers\NguoiDungController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -157,6 +158,8 @@
     <Content Include="Assets\Client\css\responsive.css" />
     <Content Include="Assets\Client\css\text.css" />
     <Content Include="Assets\Client\css\text1.css" />
+    <Content Include="Assets\Client\css\text2.css" />
+    <Content Include="Assets\Client\css\text3.css" />
     <Content Include="Assets\Client\css\version\food.css" />
     <Content Include="Assets\Client\css\version\garden.css" />
     <Content Include="Assets\Client\css\version\marketing.css" />
@@ -396,6 +399,17 @@
     <Content Include="Assets\Client\upload\.DS_Store" />
     <Content Include="Assets\Client\.DS_Store" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\cldr.js" />
+    <Content Include="Scripts\cldr\event.js" />
+    <Content Include="Scripts\cldr\supplemental.js" />
+    <Content Include="Scripts\cldr\unresolved.js" />
+    <Content Include="Scripts\globalize.js" />
+    <Content Include="Scripts\globalize\currency.js" />
+    <Content Include="Scripts\globalize\date.js" />
+    <Content Include="Scripts\globalize\message.js" />
+    <Content Include="Scripts\globalize\number.js" />
+    <Content Include="Scripts\globalize\plural.js" />
+    <Content Include="Scripts\globalize\relative-time.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -403,6 +417,8 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.globalize.js" />
+    <Content Include="Scripts\jquery.validate.globalize.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -420,11 +436,12 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\NguoiDung\Index.cshtml" />
+    <Content Include="Views\LuuTrus\Create.cshtml" />
+    <Content Include="Views\LuuTrus\Delete.cshtml" />
+    <Content Include="Views\LuuTrus\Details.cshtml" />
+    <Content Include="Views\LuuTrus\Edit.cshtml" />
+    <Content Include="Views\LuuTrus\Index.cshtml" />
     <Content Include="Views\NguoiDung\DKTaiKhoanNNN.cshtml" />
-    <Content Include="Views\NguoiDung\CapNhatTTDD.cshtml" />
-    <Content Include="Views\NguoiDung\DanhSachNNN.cshtml" />
-    <Content Include="Views\NguoiDung\ab\mahi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
