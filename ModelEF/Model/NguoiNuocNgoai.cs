@@ -1,4 +1,4 @@
-namespace ModelEF.Model
+﻿namespace ModelEF.Model
 {
     using System;
     using System.Collections.Generic;
@@ -28,10 +28,12 @@ namespace ModelEF.Model
         public string HoTen { get; set; }
 
         [Column(TypeName = "date")]
+        [Display(Name = "Ngày Sinh")]
         public DateTime? NgaySinh { get; set; }
 
         [Required]
         [StringLength(3)]
+        [Display(Name = "Giới Tính")]
         public string GioiTinh { get; set; }
 
         [StringLength(10)]
@@ -47,10 +49,12 @@ namespace ModelEF.Model
 
         [Required]
         [StringLength(255)]
+        [Display(Name = "Quốc Tịch")]
         public string QuocTich { get; set; }
 
         [Required]
         [StringLength(8)]
+        [Display(Name = "PassPort")]
         public string Passport { get; set; }
 
         [Required]

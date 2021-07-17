@@ -441,6 +441,7 @@
     <Content Include="Views\LuuTrus\Edit.cshtml" />
     <Content Include="Views\LuuTrus\Index.cshtml" />
     <Content Include="Views\NguoiDung\Create.cshtml" />
+    <Content Include="Views\NguoiDung\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
