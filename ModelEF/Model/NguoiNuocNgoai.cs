@@ -1,4 +1,4 @@
-﻿namespace ModelEF.Model
+namespace ModelEF.Model
 {
     using System;
     using System.Collections.Generic;
@@ -17,52 +17,40 @@
 
         [Key]
         [StringLength(8)]
-        [Required(ErrorMessage = "Mã không được để trống! ")]
         public string MaTKNNN { get; set; }
 
-       
+        [Required]
         [StringLength(50)]
-        [Required(ErrorMessage = "Mật Khẩu không được để trống! ")]
         public string MatKhau { get; set; }
 
-        
+        [Required]
         [StringLength(255)]
-        [Required(ErrorMessage = "Họ Tên không được để trống! ")]
         public string HoTen { get; set; }
 
         [Column(TypeName = "date")]
-        [Display(Name = "Ngày Sinh")]
         public DateTime? NgaySinh { get; set; }
 
         [Required]
         [StringLength(3)]
-        [Display(Name = "Giới Tính")]
         public string GioiTinh { get; set; }
 
         [StringLength(10)]
-        [Required(ErrorMessage = "SĐT không được để trống! ")]
         public string SDT { get; set; }
 
-       
+        [Required]
         [StringLength(30)]
-        [Required(ErrorMessage = "Email không được để trống! ")]
         public string Email { get; set; }
 
-       
+        [Required]
         [StringLength(200)]
-        [Required(ErrorMessage = "Địa chỉ không được để trống! ")]
         public string DiachiTT { get; set; }
 
-        
+        [Required]
         [StringLength(255)]
-        [Display(Name = "Quốc Tịch")]
-        [Required(ErrorMessage = "Quốc tịch không được để trống! ")]
         public string QuocTich { get; set; }
 
-     
+        [Required]
         [StringLength(8)]
-        [Display(Name = "PassPort")]
-        [Required(ErrorMessage = "Passport không được để trống! ")]
         public string Passport { get; set; }
 
         [Required]
