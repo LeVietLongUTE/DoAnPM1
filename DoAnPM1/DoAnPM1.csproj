@@ -139,7 +139,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\NguoiDungModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -441,13 +440,14 @@
     <Content Include="Views\LuuTrus\Details.cshtml" />
     <Content Include="Views\LuuTrus\Edit.cshtml" />
     <Content Include="Views\LuuTrus\Index.cshtml" />
-    <Content Include="Views\NguoiDung\DKTaiKhoanNNN.cshtml" />
+    <Content Include="Views\NguoiDung\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Model\" />
     <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Areas\Admin\View\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

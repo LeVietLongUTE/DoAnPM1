@@ -67,3 +67,11 @@ h4 {
     position: absolute;
     top: 50%;
 }
+.parent {
+    width: 20%;
+    height: auto;
+    min-height: 100px;
+    background: red;
+    font-size: 10vw;
+    display: inline;
+}
