@@ -33,3 +33,9 @@ C:\Users\Admin\Videos\DoAnPM1\ModelEF\obj\Debug\ModelEF.csproj.CoreCompileInputs
 C:\Users\Admin\Videos\DoAnPM1\ModelEF\obj\Debug\ModelEF.csproj.CopyComplete
 C:\Users\Admin\Videos\DoAnPM1\ModelEF\obj\Debug\ModelEF.dll
 C:\Users\Admin\Videos\DoAnPM1\ModelEF\obj\Debug\ModelEF.pdb
+C:\Users\LE SI DUY KHAI\OneDrive\Máy tính\DoAnPM1\ModelEF\bin\Debug\ModelEF.dll.config
+C:\Users\LE SI DUY KHAI\OneDrive\Máy tính\DoAnPM1\ModelEF\bin\Debug\EntityFramework.dll
+C:\Users\LE SI DUY KHAI\OneDrive\Máy tính\DoAnPM1\ModelEF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\LE SI DUY KHAI\OneDrive\Máy tính\DoAnPM1\ModelEF\bin\Debug\EntityFramework.xml
+C:\Users\LE SI DUY KHAI\OneDrive\Máy tính\DoAnPM1\ModelEF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\LE SI DUY KHAI\OneDrive\Máy tính\DoAnPM1\ModelEF\obj\Debug\ModelEF.csproj.CopyComplete
