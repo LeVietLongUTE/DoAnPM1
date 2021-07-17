@@ -29,16 +29,33 @@ namespace DoAnPM1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "MaTKNNN,MatKhau,HoTen,NgaySinh,GioiTinh,SDT,Email,DiachiTT,QuocTich,Passport,MaTKND")] NguoiNuocNgoai nguoiNuocNgoai)
         {
-            if (ModelState.IsValid)
+            try
             {
-                
-                db.NguoiNuocNgoais.Add(nguoiNuocNgoai);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index");
-            }
+                if (ModelState.IsValid)
+                {
+                    var check = db.NguoiNuocNgoais.SingleOrDefault(x => x.MaTKNNN ==nguoiNuocNgoai.MaTKNNN);
+                    if (check==null)
+                    {
+                        db.NguoiNuocNgoais.Add(nguoiNuocNgoai);
+                        await db.SaveChangesAsync();
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        ViewBag.error =("Mã tài khoản đã tồn tại");
+                    }
+                   
+                }
 
-            ViewBag.MaTKND = new SelectList(db.NguoiDungs, "MaTKND", "MaTKND", nguoiNuocNgoai.MaTKND);
-            return View(nguoiNuocNgoai);
+                ViewBag.MaTKND = new SelectList(db.NguoiDungs, "MaTKND", "MaTKND", nguoiNuocNgoai.MaTKND);
+                return View(nguoiNuocNgoai);
+            }
+            catch 
+            {
+
+                return Content("Error");
+            }
+           
         }
 
 

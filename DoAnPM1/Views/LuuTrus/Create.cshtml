@@ -504,7 +504,7 @@
                                     <div class="col-lg-3 ml-5">
                                         <a class="abc">
                                            
-                                            @Html.EditorFor(model => model.MaLT, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.EditorFor(model => model.MaLT, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mời nhập mã lưu trú!" } })
                                             @Html.ValidationMessageFor(model => model.MaLT, "", new { @class = "text-danger" })
                                         </a>
                                     </div>
@@ -549,7 +549,7 @@
                                     </div>
                                     <div class="col-lg-3 ml-3">
                                         <a class="abcde">
-                                            @Html.EditorFor(model => model.SoPhong, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.EditorFor(model => model.SoPhong, new { htmlAttributes = new { @class = "form-control", @placeholder = "nhập số phòng!" } })
                                             @Html.ValidationMessageFor(model => model.SoPhong, "", new { @class = "text-danger" })
                                         </a>
                                     </div>

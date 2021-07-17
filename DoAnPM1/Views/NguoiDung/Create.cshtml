@@ -480,6 +480,8 @@
                                     <a class="abc">
                                         @Html.EditorFor(model => model.MaTKNNN, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mời nhập mã hộ chiếu" } })
                                         @Html.ValidationMessageFor(model => model.MaTKNNN, "", new { @class = "text-danger" })
+                                        @if(ViewBag.error != null)
+                                        {@ViewBag.error }
                                     </a>
                                 </div>
                             </div>
@@ -521,7 +523,7 @@
                                     <h4>Email</h4>
                                 </div>
                                 <div class="col-lg-3 ml-3">
-                                    <a class="abcde">
+                                    <a class="abc">
                                         @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mời nhập Email" } })
                                         @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                     </a>
@@ -567,7 +569,7 @@
                                 </div>
                                 <div class="col-lg-3 ml-5">
                                     <a class="abc">
-                                        @Html.TextBoxFor(model => model.NgaySinh, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "datetime-local" })
+                                        @Html.TextBoxFor(model => model.NgaySinh, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
                                         @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
                                     </a>
                                 </div>
