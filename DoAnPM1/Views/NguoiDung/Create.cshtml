@@ -3,173 +3,32 @@
 @{
     Layout = null;
 }
-
 <!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>DKTaiKhoanNNN</title>
-</head>
-<body>
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-horizontal">
-            <h4>NguoiNuocNgoai</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.MaTKNNN, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.MaTKNNN, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.MaTKNNN, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.MatKhau, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.HoTen, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.HoTen, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.HoTen, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.NgaySinh, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.NgaySinh, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.GioiTinh, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.GioiTinh, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.GioiTinh, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.SDT, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.DiachiTT, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.DiachiTT, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.DiachiTT, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.QuocTich, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.QuocTich, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.QuocTich, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Passport, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Passport, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Passport, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.MaTKND, "MaTKND", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("MaTKND", null, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.MaTKND, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
-            </div>
-        </div>
-    }
-
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-</body>
-</html>
-
-
-<!--<!DOCTYPE html>
 <html lang="en">
-<head>-->
-    <!-- Basic -->
-    <!--<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
-
-    <!-- Mobile Metas -->
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
-
-    <!-- Site Metas -->
-    <!--<title>Đăng kí tài khoản người nước ngoài</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Đăng kí tài khoản người nước ngoài</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <meta name="author" content="">-->
-
-    <!-- Site Icons -->
-    <!--<link rel="shortcut icon" href="~/Assets/Client/images/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="~/Assets/Client/images/apple-touch-icon.png">-->
-
-    <!-- Design fonts -->
-    <!--<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">-->
-
-    <!-- Bootstrap core CSS -->
-    <!--<link href="~/Assets/Client/css/bootstrap.css" rel="stylesheet">-->
-
-    <!-- FontAwesome Icons core CSS -->
-    <!--<link href="~/Assets/Client/css/font-awesome.min.css" rel="stylesheet">-->
-
-    <!-- Custom styles for this template -->
-    <!--<link href="~/Assets/Client/style.css" rel="stylesheet">-->
-
-    <!-- Responsive styles for this template -->
-    <!--<link href="~/Assets/Client/css/responsive.css" rel="stylesheet">-->
-
-    <!-- Colors for this template -->
-    <!--<link href="~/Assets/Client/css/colors.css" rel="stylesheet">-->
-
-    <!-- Version Tech CSS for this template -->
-    <!--<link href="~/Assets/Client/css/version/tech.css" rel="stylesheet">-->
-
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-
-    <![endif]-->
-<!--</head>
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="~/Assets/Client/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="~/Assets/Client/images/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="~/Assets/Client/css/bootstrap.css" rel="stylesheet">
+    <link href="~/Assets/Client/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Assets/Client/style.css" rel="stylesheet">
+    <link href="~/Assets/Client/css/text.css" rel="stylesheet">
+    <link href="~/Assets/Client/css/text1.css" rel="stylesheet">
+    <link href="~/Assets/Client/css/text2.css" rel="stylesheet">
+    <link href="~/Assets/Client/css/text3.css" rel="stylesheet">
+    <link href="~/Assets/Client/css/responsive.css" rel="stylesheet">
+    <link href="~/Assets/Client/css/colors.css" rel="stylesheet">
+    <link href="~/Assets/Client/css/version/tech.css" rel="stylesheet">
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+</head>
 <body>
 
     <div id="wrapper">
@@ -215,15 +74,15 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_01.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Science</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Science</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">Top 10+ care advice for your toenails</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
 
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
@@ -231,15 +90,15 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_02.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Science</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Science</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">The secret of your beauty is handmade soap</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
 
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
@@ -247,15 +106,15 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_03.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Science</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Science</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">Benefits of face mask made from mud</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
 
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
@@ -263,17 +122,17 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_04.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Science</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Science</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">Relax with the unique warmth of candle flavor</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
-                                                        </div>--><!-- end row -->
-                                                    <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
+                                                        </div> end row
+                                                    </div>
                                                     <div id="cat02" class="tabcontent">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
@@ -282,15 +141,15 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_05.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Technology</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Technology</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">2017 summer stamp will have design models here</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
 
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
@@ -298,15 +157,15 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_06.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Technology</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Technology</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">Which color is the most suitable color for you?</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
 
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
@@ -314,15 +173,15 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_07.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Technology</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Technology</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">Subscribe to these sites to keep an eye on the fashion</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
 
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
@@ -330,17 +189,17 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_08.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Technology</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Technology</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">The most trends of this year with color combination</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
-                                                        </div>--><!-- end row -->
-                                                    <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
+                                                        </div> end row
+                                                    </div>
                                                     <div id="cat03" class="tabcontent">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
@@ -349,15 +208,15 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_09.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Social Media</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Social Media</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">I visited the architects of Istanbul for you</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
 
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
@@ -365,15 +224,15 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_10.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Social Media</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Social Media</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">Prepared handmade dish dish in the Netherlands</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
 
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
@@ -381,15 +240,15 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_11.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Social Media</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Social Media</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">I recommend you visit the fairy chimneys</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
 
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
@@ -397,17 +256,17 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_12.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Social Media</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Social Media</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">One of the most beautiful ports in the world</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
-                                                        </div>--><!-- end row -->
-                                                    <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
+                                                        </div> end row
+                                                    </div>
                                                     <div id="cat04" class="tabcontent">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
@@ -416,15 +275,15 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_13.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Car News</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Car News</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">A collection of the most beautiful shop designs</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
 
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
@@ -432,15 +291,15 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_14.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Car News</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Car News</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">America's and Canada's most beautiful wine houses</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
 
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
@@ -448,15 +307,15 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_15.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Car News</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Car News</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">The most professional ways to color your walls</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
 
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
@@ -464,17 +323,17 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_16.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Car News</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Car News</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">Stylish cabinet designs and furnitures</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
-                                                        </div>--><!-- end row -->
-                                                    <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
+                                                        </div> end row
+                                                    </div>
                                                     <div id="cat05" class="tabcontent">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
@@ -483,15 +342,15 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_17.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Worldwide</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Worldwide</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">Grilled vegetable with fish prepared with fish</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
 
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
@@ -499,15 +358,15 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_18.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Worldwide</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Worldwide</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">The world's finest and clean meat restaurants</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
 
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
@@ -515,15 +374,15 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_19.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Worldwide</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Worldwide</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">Fried veal and vegetable dish</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
 
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
@@ -531,20 +390,20 @@
                                                                         <a href="tech-single.html" title="">
                                                                             <img src="/Assets/Client/upload/tech_menu_20.jpg" alt="" class="img-fluid">
                                                                             <div class="hovereffect">
-                                                                            </div>--><!-- end hover -->
-                                                                            <!--<span class="menucat">Worldwide</span>
+                                                                            </div> end hover
+                                                                            <span class="menucat">Worldwide</span>
                                                                         </a>
-                                                                    </div>--><!-- end media -->
-                                                                    <!--<div class="blog-meta">
+                                                                    </div> end media
+                                                                    <div class="blog-meta">
                                                                         <h4><a href="tech-single.html" title="">Tasty pasta sauces and recipes</a></h4>
-                                                                    </div>--><!-- end meta -->
-                                                                <!--</div>--><!-- end blog-box -->
-                                                            <!--</div>
-                                                        </div>--><!-- end row -->
-                                                    <!--</div>
-                                                </div>--><!-- end tab-details -->
-                                            <!--</div>--><!-- end mega-menu-content -->
-                                        <!--</div>
+                                                                    </div> end meta
+                                                                </div> end blog-box
+                                                            </div>
+                                                        </div> end row
+                                                    </div>
+                                                </div> end tab-details
+                                            </div> end mega-menu-content
+                                        </div>
                                     </li>
                                 </ul>
                             </li>
@@ -584,65 +443,224 @@
 
 
                 </nav>
-            </div>--><!-- end container-fluid -->
+            </div>
 
-        <!--</header>--><!-- end market-header -->
-        <!-- body -->
+        </header>
 
-        <!--<div class="page-title mt-0 pt-2">
-            <div class="container mt-0 ">
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul class="breadcrumbstyle clearfix text-uppercase ">
-                            <li class="breadcrumb-item"><a href="@Url.Action("Index","NguoiDung")">Trang chủ</a></li>
-                            <li class="breadcrumb-item active">Đăng kí tài khoản NNN</li>
+    </div>
+    <div class="page-title mt-0 pt-2">
+        <div class="container mt-0 ">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="breadcrumbstyle clearfix text-uppercase ">
+                        <li class="breadcrumb-item"><a href="@Url.Action("Index","NguoiDung")">Trang chủ</a></li>
+                        <li class="breadcrumb-item active">Đăng kí tài khoản NNN</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section class="section md p-4">
+            <h2 class="text-center pb-5 ">Website Quản Lý Người Nước Ngoài Tại Thành Phố Đà Nẵng</h2>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div>
+                    <h4 class="col-8 ml-5">Đăng Kí Tài Khoản Người Nước Ngoài</h4>
+                </div>
+                <div class="col-md-8 justify-content-center mx-auto">
+                    <div class="row pt-5">
+                        <ul class="col-md-6 pl-5 ">
+                            <div class="row  ">
+                                <div class="col-lg-3 ">
+                                    <h4>Mã Hộ Chiếu</h4>
+                                </div>
+                                <div class="col-lg-3 ml-5">
+                                    <a class="abc">
+                                        @Html.EditorFor(model => model.MaTKNNN, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mời nhập mã hộ chiếu" } })
+                                        @Html.ValidationMessageFor(model => model.MaTKNNN, "", new { @class = "text-danger" })
+                                    </a>
+                                </div>
+                            </div>
+                        </ul>
+                        <ul class="col-md-6 ">
+                            <div class="row  ">
+                                <div class="col-lg-3 mr-4 ">
+                                    <h4>Số điện thoại</h4>
+                                </div>
+                                <div class="col-lg-3 ml-5">
+                                    <a class="abcd">
+                                        @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mời nhập số điện thoại" } })
+                                        @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
+                                    </a>
+                                </div>
+
+                            </div>
                         </ul>
                     </div>
-                </div>
-            </div>--><!-- end page-title -->
 
-            <!--<section class="section md p-4">
-                <h2 class="text-center pb-5 ">Đăng kí Tài Khoản Người Dùng</h2>
-                <div class="container ">
-                    <div class="row">
-                        <div class="col-md-4 ">
 
-                            <input type="text" class="form-control" placeholder="Your name">
-                            <input type="text" class="form-control" placeholder="Email address">
-                            <input type="text" class="form-control" placeholder="Phone">
-                        </div>
-                        <div class="col-md-4 ">
-                            <div class="widget">
-                                <div class=" clearfix">
-                                    <div class="banner-img  w-50 h-50">
-                                        <img src="~/Assets/client/images/f960e8e8d9d859c_126201813.jpg" alt="" class="img-fluid ">
-                                        <h4 class="text-center ">Ảnh xác thực</h4>
-                                    </div>--><!-- end banner-img -->
-                                <!--</div>--><!-- end banner -->
-                            <!--</div>--><!-- end widget -->
-                            <!--<input type="text" class="form-control" placeholder="Your name">
-                            <input type="text" class="form-control" placeholder="Email address">
-                            <input type="text" class="form-control" placeholder="Phone">
-                        </div>
-                        <div class="col-md-4">
-                            <div class="widget">
-                                <div class=" clearfix">
-                                    <div class="banner-img  w-50 h-50">
-                                        <img src="~/Assets/client/images/f960e8e8d9d859c_126201813.jpg" alt="" class="img-fluid ">
-                                        <h4 class="text-center ">Ảnh xác thực</h4>
-                                    </div>--><!-- end banner-img -->
-                                <!--</div>--><!-- end banner -->
-                            <!--</div>--><!-- end widget -->
-                            <!--<input type="text" class="form-control" placeholder="Your name">
-                            <input type="text" class="form-control" placeholder="Email address">
-                            <input type="text" class="form-control" placeholder="Phone">
-                        </div>
+                    <div class="row pt-0">
+                        <ul class="col-md-6 pl-5 ">
+                            <div class="row  ">
+                                <div class="col-lg-3 ">
+                                    <h4>Mật Khẩu</h4>
+                                </div>
+                                <div class="col-lg-3 ml-5">
+                                    <a class="abc">
+                                        @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mời nhập mật khẩu" } })
+                                        @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+                                    </a>
+                                </div>
+                            </div>
+                        </ul>
+                        <ul class="col-md-6 ">
+                            <div class="row  ">
+                                <div class="col-lg-3 mr-4 ">
+                                    <h4>Email</h4>
+                                </div>
+                                <div class="col-lg-3 ml-3">
+                                    <a class="abcde">
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mời nhập Email" } })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                    </a>
+                                </div>
+
+                            </div>
+                        </ul>
                     </div>
+                    <div class="row pt-0">
+                        <ul class="col-md-6 pl-5 ">
+                            <div class="row  ">
+                                <div class="col-lg-3 ">
+                                    <h4>Họ Tên</h4>
+                                </div>
+                                <div class="col-lg-3 ml-5 mr-2">
+                                    <a class="abc">
+                                        @Html.EditorFor(model => model.HoTen, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mời nhập họ tên" } })
+                                        @Html.ValidationMessageFor(model => model.HoTen, "", new { @class = "text-danger" })
+                                    </a>
+                                </div>
+                            </div>
+                        </ul>
+                        <ul class="col-md-6 ">
+                            <div class="row  ">
+                                <div class="col-lg-3 mr-4 ">
+                                    <h4>Địa chỉ thường trú</h4>
+                                </div>
+                                <div class="col-lg-3 ml-5">
+                                    <a class="abcd">
+                                        @Html.EditorFor(model => model.DiachiTT, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mời nhập địa chỉ thường trú" } })
+                                        @Html.ValidationMessageFor(model => model.DiachiTT, "", new { @class = "text-danger" })
+                                    </a>
+                                </div>
 
-                </div>--><!-- end container -->
-            <!--</section>-->
-            <!-- body -->
-            <!--<footer class="footer">
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="row pt-0">
+                        <ul class="col-md-6 pl-5 ">
+                            <div class="row  ">
+                                <div class="col-lg-3 ">
+                                    <h4>Ngày Sinh</h4>
+                                </div>
+                                <div class="col-lg-3 ml-5">
+                                    <a class="abc">
+                                        @Html.TextBoxFor(model => model.NgaySinh, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "datetime-local" })
+                                        @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
+                                    </a>
+                                </div>
+                            </div>
+                        </ul>
+                        <ul class="col-md-6 ">
+                            <div class="row  ">
+                                <div class="col-lg-3 mr-4 ">
+                                    <h4>Quốc tịch</h4>
+                                </div>
+                                <div class="col-lg-3 ml-5">
+                                    <a class="abcd">
+                                        @Html.EditorFor(model => model.QuocTich, new { htmlAttributes = new { @class = "form-control", @placeholder = "yêu cầu nhập quốc tịch" } })
+                                        @Html.ValidationMessageFor(model => model.QuocTich, "", new { @class = "text-danger" })
+                                    </a>
+                                </div>
+
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="row pt-0">
+                        <ul class="col-md-6 pl-5 ">
+                            <div class="row  ">
+                                <div class="col-lg-3 ">
+                                    <h4>Passport</h4>
+                                </div>
+                                <div class="col-lg-3 ml-5">
+                                    <a class="abc">
+                                        @Html.EditorFor(model => model.Passport, new { htmlAttributes = new { @class = "form-control", @placeholder = "yêu cầu nhập passport" } })
+                                        @Html.ValidationMessageFor(model => model.Passport, "", new { @class = "text-danger" })
+                                    </a>
+                                </div>
+                            </div>
+                        </ul>
+                        <ul class="col-md-6 ">
+                            <div class="row  ">
+                                <div class="col-lg-3 mr-4 ">
+                                    <h4>Giới tính</h4>
+                                </div>
+                                <div class="col-lg-3 ml-5 ">
+                                    <div >
+                                        <a class="column is-one-fifth">
+                                            @Html.DropDownList("GioiTinh", new List<SelectListItem>
+                                                    {
+                                                        new SelectListItem
+                                                        {
+                                                            Text = "Nam", Value = "Nam"
+                                                        },
+                                                        new SelectListItem
+                                                        {
+                                                            Text = "Nữ", Value = "Nữ"
+                                                        }
+                                                    })
+                                        </a>
+                                       
+
+                                        @Html.ValidationMessageFor(model => model.GioiTinh, "", new { @class = "text-danger" })
+                                    </div>
+                                      </div>
+                                    </div>
+                        </ul>
+                    </div>
+                    <div class="row pt-0">
+                        <ul class="col-md-6 pl-5 ">
+                            <div class="row  ">
+                                <div class="col-lg-3 ">
+                                    <h4>Mã TK người dùng</h4>
+                                </div>
+                                <div class="col-lg-3 ml-5">
+                                    <a class="abc">
+                                        @Html.DropDownList("MaTKND", null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.MaTKND, "", new { @class = "text-danger" })
+                                    </a>
+                                </div>
+                            </div>
+                        </ul>
+
+                    </div>
+                </div>
+               
+        <div class="buton p-5">
+            <button type="submit" class="btnn btn-primary">Đăng Kí </button>
+        </div>  
+    }
+            </section>
+
+
+
+
+
+
+            </div>
+            <footer class="footer">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-7">
@@ -665,12 +683,12 @@
                                             <input type="text" class="form-control" placeholder="Enter your email address">
                                             <button type="submit" class="btn btn-primary">SUBMIT</button>
                                         </form>
-                                    </div>--><!-- end newsletter -->
-                                <!--</div>--><!-- end footer-text -->
-                            <!--</div>--><!-- end widget -->
-                        <!--</div>--><!-- end col -->
+                                    </div> e
+                                </div>
+                            </div>
+                        </div>
 
-                        <!--<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                             <div class="widget">
                                 <h2 class="widget-title">Popular Categories</h2>
                                 <div class="link-widget">
@@ -681,11 +699,11 @@
                                         <li><a href="#">Make Money <span>(22)</span></a></li>
                                         <li><a href="#">Blogging <span>(66)</span></a></li>
                                     </ul>
-                                </div>--><!-- end link-widget -->
-                            <!--</div>--><!-- end widget -->
-                        <!--</div>--><!-- end col -->
+                                </div>
+                            </div>
+                        </div>
 
-                        <!--<div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
                             <div class="widget">
                                 <h2 class="widget-title">Copyrights</h2>
                                 <div class="link-widget">
@@ -696,10 +714,10 @@
                                         <li><a href="#">Trademark</a></li>
                                         <li><a href="#">License & Help</a></li>
                                     </ul>
-                                </div>--><!-- end link-widget -->
-                            <!--</div>--><!-- end widget -->
-                        <!--</div>--><!-- end col -->
-                    <!--</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="row">
                         <div class="col-md-12 text-center">
@@ -707,26 +725,20 @@
                             <div class="copyright">&copy; Tech Blog. Design: <a href="http://html.design">HTML Design</a>.</div>
                         </div>
                     </div>
-                </div>--><!-- end container -->
-            <!--</footer>--><!-- end footer -->
+                </div>
+            </footer>
 
+            <script src="~/Assets/Client/js/jquery.min.js"></script>
+            <script src="~/Assets/Client/js/tether.min.js"></script>
+            <script src="~/Assets/Client/js/bootstrap.min.js"></script>
+            <script src="~/Assets/Client/js/custom.js"></script>
+            <link rel=”stylesheet” href=”https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css” />
+            <script src=”https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js”></script>
+            <script src=”https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js”></script>
+            <script src=”https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js”></script>
 
-
-
-        <!--</div>--><!-- end wrapper -->
-        <!-- Core JavaScript
-        ================================================== -->
-        <!--<script src="~/Assets/Client/js/jquery.min.js"></script>
-        <script src="~/Assets/Client/js/tether.min.js"></script>
-        <script src="~/Assets/Client/js/bootstrap.min.js"></script>
-        <script src="~/Assets/Client/js/custom.js"></script>
-        <link rel=”stylesheet” href=”https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css” />
-        <script src=”https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js”></script>
-        <script src=”https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js”></script>
-        <script src=”https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js”></script>
-
-</body>
-</html>-->
+        </body>
+</html>
 
 
 
