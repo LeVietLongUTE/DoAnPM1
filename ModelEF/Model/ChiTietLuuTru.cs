@@ -10,8 +10,7 @@ namespace ModelEF.Model
     public partial class ChiTietLuuTru
     {
         [Key]
-        [StringLength(8)]
-        public string MaCT { get; set; }
+        public int MaCT { get; set; }
 
         [Required]
         [StringLength(8)]
