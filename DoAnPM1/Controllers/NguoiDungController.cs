@@ -10,6 +10,12 @@ namespace DoAnPM1.Controllers
     public class NguoiDungController : Controller
     {
         private connect db = new connect();
+
+
+        public ActionResult Index()
+        {
+            return View();
+        }
         public ActionResult Create()
         {
             ViewBag.MaTKND = new SelectList(db.NguoiDungs, "MaTKND", "MaTKND");
