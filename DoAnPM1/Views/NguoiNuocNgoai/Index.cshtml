@@ -1,0 +1,145 @@
+﻿@model PagedList.IPagedList<ModelEF.Model.NguoiNuocNgoai>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+@section header{
+    Thông Tin Cá Nhân
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Thông Tin Cá Nhân Người Nước Ngoài</title>
+    <!-- Custom fonts for this template-->
+    <link href="~/Assets/Login/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="~/Assets/Login/css/sb-admin-2.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-primary">
+    <div class="container">
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-12 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5" style="padding:30px">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row text-md-center" style="padding-bottom:20px">
+                            <div class="col-8">
+                                <h1 class="mb-4">Thông Tin Cá Nhân</h1>
+                            </div>
+                            <div class="top-nav clearfix">
+                                <ul class="nav pull-right top-menu">
+                                    <li>
+                                        <p class="text-gray-900 mb-4">Xin Chào @ViewBag.HoTen</p>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                            <img alt="" src="images/avatar1_small.jpg">
+                                            <span class="username">
+
+                                            </span>
+                                            <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu extended logout" style="padding:10px">
+                                            <li><a href="~/Home/Index"><i class=" fa fa-home"></i>Trang chủ</a></li>
+                                            <li><a href="~/ChiTietLuuTru/Index"><i class=" fa fa-edit"></i>Cập Nhật Chi Tiết Lưu trú</a></li>
+                                            <li><a href="~/ChiTietLuuTru/DSCT"><i class=" fa fa-edit"></i>Danh Sách Chi Tiết</a></li>
+                                            <li><a href="~/ChiTietLuuTru/Create"><i class=" fa fa-edit"></i>Thêm Chi Tiết</a></li>
+                                            <li><a href="@Url.Action("Index", "Login")"><i class="fa fa-key"></i> Đăng Xuất</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            @foreach (var item in Model.Where(x => x.MaTKNNN == ViewBag.MaTKNNN))
+                            {
+                                <div class="row" style="padding-left:50px">
+                                    <div>
+                                        <p class="mb-4">Mã Tài Khoản:</p>
+                                        <p class="mb-4">Họ và Tên:</p>
+                                        <p class="mb-4">Ngày Sinh:</p>
+                                        <p class="mb-4">Giới Tính:</p>
+                                        <p class="mb-4">Email:</p>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <p class="text-gray-900 mb-4">@item.MaTKNNN</p>
+                                        <p class="text-gray-900 mb-4">@item.HoTen</p>
+                                        <p class="text-gray-900 mb-4">@item.NgaySinh</p>
+                                        <p class="text-gray-900 mb-4">@item.GioiTinh</p>
+                                        <p class="text-gray-900 mb-4">@item.Email</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-4">Số Điện thoại:</p>
+                                        <p class="mb-4">Quốc Tịch:</p>
+                                        <p class="mb-4">Địa Chỉ TT:</p>
+                                        <p class="mb-4">Số Hộ Chiếu:</p>
+                                        <p class="mb-4">Mã TKND:</p>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <p class="text-gray-900 mb-4">@item.SDT</p>
+                                        <p class="text-gray-900 mb-4">@item.QuocTich</p>
+                                        <p class="text-gray-900 mb-4">@item.DiachiTT</p>
+                                        <p class="text-gray-900 mb-4">@item.Passport</p>
+                                        <p class="text-gray-900 mb-4">@item.MaTKND</p>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="text-center">
+                                    <form class="user">
+                                        <div>
+                                            <a href="/NguoiNuocNgoai/Edit/@item.MaTKNNN" class="btn btn-user btn-primary">
+                                                Chỉnh Sửa
+                                            </a>
+                                            <a href="#" class="btn btn-user btn-outline-secondary" style="margin:20px">
+                                                Hủy
+                                            </a>
+                                            <a href="#" class="btn btn-user btn-primary">
+                                                Quay Lại
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            }
+                            @*<div class="">
+                                    <form class="user">
+                                        <hr />
+                                        <div style="padding-top:30px">
+                                            <a href="@Url.Action("Edit", "NguoiNuocNgoai")" class="btn btn-user btn-primary">
+                                                Chỉnh Sửa
+                                            </a>
+
+                                            <a href="#" class="btn btn-user btn-outline-secondary" style="margin:20px">
+                                                Hủy
+                                            </a>
+                                            <a href="#" class="btn btn-user btn-primary">
+                                                Quay Lại
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/Assets/Login/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Assets/Login/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="~/Assets/Login/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="~/Assets/Login/js/sb-admin-2.min.js"></script>
+</body>
+</html>

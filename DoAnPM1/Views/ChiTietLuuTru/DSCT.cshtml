@@ -1,0 +1,165 @@
+﻿@model PagedList.IPagedList<ModelEF.Model.ChiTietLuuTru>
+@using PagedList.Mvc;
+@{
+    /**/
+
+    ViewBag.Title = "DSCT";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Cập Nhật Chi Tiết Lưu Trú</title>
+    <!-- Custom fonts for this template-->
+    <link href="~/Assets/Login/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="~/Assets/Login/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="~/Assets/Login/css/bootstrap-reset.css" rel="stylesheet">
+    <link href="~/Assets/Login/css/style.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-primary">
+    <div class="container">
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-12 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="text-center" style="padding-top:30px">
+                            <h2 class="h2 text-gray-900 mb-4">Cập Nhật Chi Tiết Lưu Trú</h2>
+                        </div>
+                        <div class="row" style="padding-top:30px">
+                            <div class="col-lg-4">
+                                <div class="row" style="padding-left:30px">
+                                    <p class="text-gray-900 mb-4">Mã Lưu trú:</p>
+                                    <div class="align-content-end" style="padding-left:20px">
+                                        @ViewBag.MaLT
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-left:30px">
+                                    <p class="text-gray-900 mb-4">Passport:</p>
+                                    <div class="align-content-end" style="padding-left:20px">
+                                        @ViewBag.Passport
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="row" style="padding-left:30px">
+                                    <p class="text-gray-900 mb-4">Tên Cơ Sở Lưu trú:</p>
+                                    <div class="align-content-end" style="padding-left:20px">
+                                        @ViewBag.TenCSLT
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-left:30px">
+                                    <p class="text-gray-900 mb-4">Địa Chỉ Lưu Trú:</p>
+                                    <div class="align-content-end" style="padding-left:20px">
+                                        @ViewBag.DCLT
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <hr>
+                            <h3 class="text-gray-900 mb-5">Lịch Trình Di Chuyển</h3>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <div class="col-lg-4 text-center">
+                                    <div class="">
+                                        <p class="text-gray-900 mb-4">Thời Gian Đến:</p>
+                                    </div>
+                                    <div class="">
+                                        <p class="text-gray-900 mb-4">Thời Gian Đi:</p>
+                                    </div>
+                                    <div class="">
+                                        <p class="text-gray-900 mb-4">Địa Điểm:</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 text-center">
+                                    <div class="col-lg-10" style="padding-bottom:5px">
+                                        <input class="form-control" data-val="true" data-val-length="" data-val-length-max="100" id="TGD" name="ThoiGianDen" type="datetime-local" value="30/06/2021 08:00:00">
+                                    </div>
+                                    <div class="col-lg-10" style="padding-bottom:5px">
+                                        <input class="form-control" data-val="true" data-val-length="" data-val-length-max="100" id="TGD" name="ThoiGianDi" type="datetime-local" value="30/06/2021 10:00:00">
+                                    </div>
+                                    <div class="col-lg-10" style="padding-bottom:5px">
+                                        <input class="form-control" data-val="true" data-val-length="" data-val-length-max="100" id="DD" name="DiaDiem" type="text" value="Hội An">
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div>
+                                <table class="table table-bordered col-12">
+                                    <thead>
+                                        <tr>
+                                            <th>Stt</th>
+                                            <th>Thời Gian Đến</th>
+                                            <th>Thời Gian Đi</th>
+                                            <th>Địa Điểm</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @{ var i = 0;}
+                                        @foreach (var item in Model.Where(x => x.MaLT == @ViewBag.MaLT))
+                                        {
+                                            <tr id="row_@item.MaCT" class="row_@item.ThoiGianDen.ToString()">
+                                                <td>
+                                                    @{
+                                                        i = i + 1;
+                                                        <span>@i</span>
+
+                                                    }
+                                                </td>
+                                                <td>@item.ThoiGianDen</td>
+                                                <td>@item.ThoiGianDi</td>
+                                                <td>@item.DiaDiem</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                                @Html.PagedListPager(Model, page => Url.Action("DSCT", new { page }))
+                            </div>
+                            <hr />
+                            <div class="row text-md-center">
+                                <div class="col-lg-4">
+                                    <a href="#" class="btn btn-success" style="padding:5px; font-size:20px">
+                                        <i class="fa fa-plus text-light" style="font-size: 16px;"></i>
+                                        Thêm
+                                    </a>
+                                </div>
+                                <div class="col-lg-4">
+                                    <a href="#" class="btn btn-success" style="padding:5px; font-size:20px">
+                                        Hoàn Tất
+                                    </a>
+                                </div>
+                                <div class="col-lg-4">
+                                    <a href="~/NguoiNuocNgoai/Index" class="btn btn-success" style="padding:5px; font-size:20px">
+                                        Thoát
+                                    </a>
+                                </div>
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/Assets/Login/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Assets/Login/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="~/Assets/Login/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="~/Assets/Login/js/sb-admin-2.min.js"></script>
+</body>
+</html>

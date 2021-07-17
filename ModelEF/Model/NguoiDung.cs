@@ -68,9 +68,7 @@ namespace ModelEF.Model
 
         public string MCKD { get; set; }
 
-        [Required]
-        [StringLength(10)]
-        public string TrangThai { get; set; }
+        public bool TrangThai { get; set; }
 
         [StringLength(8)]
         public string MaTKNV { get; set; }

@@ -1,0 +1,181 @@
+﻿@model ModelEF.Model.NguoiNuocNgoai
+@{
+    ViewBag.Title = "Edit";
+    Layout = null;
+}
+
+@section header{
+    Cập Nhật Thông Tin Cá Nhân
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Cập Nhật Thông Tin Cá Nhân</title>
+    <!-- Custom fonts for this template-->
+    <link href="~/Assets/Login/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="~/Assets/Login/css/sb-admin-2.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-primary">
+    <div class="container">
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-12 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5" style="padding:30px">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row text-md-center" style="padding-bottom:20px">
+                            <div class="col-8">
+                                <h3 class="text-gray-900 mb-4"> Cập Nhật Thông Tin Cá Nhân</h3>
+                            </div>
+                            <div class="top-nav clearfix col-4">
+                                <ul class="nav pull-right top-menu">
+                                    <li>
+                                        <p class="text-gray-900 mb-4">Xin Chào @ViewBag.HoTen</p>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                            <img alt="" src="images/avatar1_small.jpg">
+                                            <span class="username">
+
+                                            </span>
+                                            <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu extended logout" style="padding:10px">
+                                            <li><a href="~/Home/Index"><i class=" fa fa-home"></i>Trang chủ</a></li>
+
+                                            <li><a href="@Url.Action("Index", "Login")"><i class="fa fa-key"></i> Đăng Xuất</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        @using (Html.BeginForm("Edit", "NguoiNuocNgoai", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    @Html.HiddenFor(model => model.MaTKNNN)
+
+                                    <div class="row">
+                                        @Html.LabelFor(model => model.MaTKNNN, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.MaTKNNN, new { @class = "form-control", @disabled = "disabled" })
+                                            @Html.ValidationMessageFor(model => model.MaTKNNN, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        @Html.LabelFor(model => model.HoTen, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.HoTen, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.HoTen, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        @Html.LabelFor(model => model.NgaySinh, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.NgaySinh, new { @class = "form-control", type = "date" })
+                                            @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        @Html.LabelFor(model => model.GioiTinh, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.GioiTinh,new List<SelectListItem>()
+                                       {
+                                           new SelectListItem(){Text="Nam"},
+                                           new SelectListItem(){Text="Nữ"},
+                                       }, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.GioiTinh, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="row">
+                                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        @Html.LabelFor(model => model.SDT, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.SDT, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        @Html.LabelFor(model => model.QuocTich, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.QuocTich,new List<SelectListItem>()
+                                       {
+                                           new SelectListItem(){Text="Brazil"},
+                                           new SelectListItem(){Text="Canada"},
+                                           new SelectListItem(){Text="China"},
+                                           new SelectListItem(){Text="France"},
+                                           new SelectListItem(){Text="Holland"},
+                                           new SelectListItem(){Text="Japan"},
+                                           new SelectListItem(){Text="Romania"},
+                                           new SelectListItem(){Text="Spain"},
+                                           new SelectListItem(){Text="Thailand"},
+                                           new SelectListItem(){Text="England"},
+                                           new SelectListItem(){Text="Germany"},
+                                           new SelectListItem(){Text="Hungary"},
+                                           new SelectListItem(){Text="Portugal"},
+                                           new SelectListItem(){Text="Russia"},
+                                           new SelectListItem(){Text="Singapore"},
+                                           new SelectListItem(){Text="Syria"},
+                                           new SelectListItem(){Text="Turkey"},
+                                           new SelectListItem(){Text="Ukraine"},
+                                           new SelectListItem(){Text="Wales"},
+                                           new SelectListItem(){Text="Zimbabwe"},
+                                       }, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.QuocTich, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        @Html.LabelFor(model => model.DiachiTT, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.DiachiTT, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.DiachiTT, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="text-center">
+                                <form class="user">
+                                    <div>
+                                        <input type="submit" value="Cập Nhật" class="btn btn-primary" />
+                                        <a href="@Url.Action("Index", "NguoiNuocNgoai")" class="btn btn-user btn-primary">
+                                            Quay Lại
+                                        </a>
+                                    </div>
+                                </form>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/Assets/Login/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Assets/Login/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="~/Assets/Login/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="~/Assets/Login/js/sb-admin-2.min.js"></script>
+</body>
+</html>
+

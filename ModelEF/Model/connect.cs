@@ -1,10 +1,10 @@
-using System;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity;
-using System.Linq;
-
 namespace ModelEF.Model
 {
+    using System;
+    using System.Data.Entity;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
+
     public partial class connect : DbContext
     {
         public connect()
@@ -13,7 +13,7 @@ namespace ModelEF.Model
         }
 
         public virtual DbSet<ChiTietLuuTru> ChiTietLuuTrus { get; set; }
-        public virtual DbSet<LuuTru> LuuTru { get; set; }
+        public virtual DbSet<LuuTru> LuuTrus { get; set; }
         public virtual DbSet<NguoiDung> NguoiDungs { get; set; }
         public virtual DbSet<NguoiNuocNgoai> NguoiNuocNgoais { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
@@ -23,10 +23,6 @@ namespace ModelEF.Model
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ChiTietLuuTru>()
-                .Property(e => e.MaCT)
-                .IsUnicode(false);
-
             modelBuilder.Entity<ChiTietLuuTru>()
                 .Property(e => e.MaLT)
                 .IsUnicode(false);

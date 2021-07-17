@@ -26,26 +26,14 @@ namespace ModelEF.Model
         [StringLength(9)]
         public string MaTKND { get; set; }
 
-        [Required]
-        [StringLength(100)]
-        public string TenCSLT { get; set; }
-
-        [Required]
-        [StringLength(100)]
-        public string DCLT { get; set; }
-
-        [Column(TypeName = "date")]
         public DateTime NDKLT { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime? NDLT { get; set; }
 
         public int SoPhong { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime NDDK { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime? NDTT { get; set; }
 
         [Required]

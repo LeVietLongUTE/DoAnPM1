@@ -16,11 +16,11 @@ namespace DoAnPM1.Models
         }
         public IEnumerable<LuuTru> ListAll()
         {
-            return db.LuuTru.ToList();
+            return db.LuuTrus.ToList();
         }
         public IEnumerable<LuuTru> ListWhereAll(string searchString, int page, int pagesize)
         {
-            IQueryable<LuuTru> mode = db.LuuTru;
+            IQueryable<LuuTru> mode = db.LuuTrus;
             if (!string.IsNullOrEmpty(searchString))
             {
                 mode = mode.Where(x => x.MaTKNNN.Contains(searchString));
@@ -29,7 +29,7 @@ namespace DoAnPM1.Models
         }
         public LuuTru FindById(string MaLT)
         {            
-            return db.LuuTru.Find(MaLT);
+            return db.LuuTrus.Find(MaLT);
         }
         public bool Edit(LuuTru LuuTru)
         {
