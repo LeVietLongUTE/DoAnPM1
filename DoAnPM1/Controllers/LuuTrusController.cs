@@ -13,7 +13,7 @@ namespace DoAnPM1.Controllers
 {
     public class LuuTrusController : Controller
     {
-        private Connect db = new Connect();
+        private connect db = new connect();
 
         // GET: LuuTrus
         public async Task<ActionResult> Index()

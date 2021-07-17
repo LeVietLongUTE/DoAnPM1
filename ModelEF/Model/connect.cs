@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace ModelEF.Model
 {
-    public partial class Connect : DbContext
+    public partial class connect : DbContext
     {
-        public Connect()
-            : base("name=Connect")
+        public connect()
+            : base("name=connect")
         {
         }
 
@@ -23,10 +23,6 @@ namespace ModelEF.Model
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ChiTietLuuTru>()
-                .Property(e => e.MaCT)
-                .IsUnicode(false);
-
             modelBuilder.Entity<ChiTietLuuTru>()
                 .Property(e => e.MaLT)
                 .IsUnicode(false);

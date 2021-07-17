@@ -9,7 +9,7 @@ namespace DoAnPM1.Controllers
 {
     public class NguoiDungController : Controller
     {
-        private Connect db = new Connect();
+        private connect db = new connect();
         public ActionResult Create()
         {
             ViewBag.MaTKND = new SelectList(db.NguoiDungs, "MaTKND", "MaTKND");
