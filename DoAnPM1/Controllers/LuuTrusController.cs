@@ -8,10 +8,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ModelEF.Model;
+using DoAnPM1.Areas.Admin.Controllers;
 
 namespace DoAnPM1.Controllers
 {
-    public class LuuTrusController : Controller
+    public class LuuTrusController : BaseController
     {
         private connect db = new connect();
 
@@ -37,7 +38,7 @@ namespace DoAnPM1.Controllers
             return View(luuTru);
         }
 
-        // GET: LuuTrus/Create
+        // GET: LuuTrusabcsd/Create
         public ActionResult Create()
         {
             ViewBag.MaTKND = new SelectList(db.NguoiDungs, "MaTKND", "MaTKND");
@@ -45,17 +46,18 @@ namespace DoAnPM1.Controllers
             return View();
         }
 
-        // POST: LuuTrus/Create
+        // POST: LuuTrusabcsd/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "MaLT,MaTKNNN,MaTKND,SoPhong,NDKLT,NDLT,NDDK,TrangThai")] LuuTru luuTru)
+        public async Task<ActionResult> Create([Bind(Include = "MaLT,MaTKNNN,MaTKND,NDKLT,NDLT,SoPhong,NDDK,NDTT,TrangThai")] LuuTru luuTru)
         {
             if (ModelState.IsValid)
             {
                 db.LuuTrus.Add(luuTru);
                 await db.SaveChangesAsync();
+                SetAlert("Cập nhật thành công", "success");
                 return RedirectToAction("Index");
             }
 
@@ -85,16 +87,17 @@ namespace DoAnPM1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "MaLT,MaTKNNN,MaTKND,SoPhong,NDKLT,NDLT,NDDK,NDTT,TrangThai")] LuuTru luuTru)
+        public async Task<ActionResult> Edit([Bind(Include = "MaLT,MaTKNNN,MaTKND,NDKLT,NDLT,SoPhong,NDDK,NDTT,TrangThai")] LuuTru luuTru)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(luuTru).State = EntityState.Modified;
                 await db.SaveChangesAsync();
+                SetAlert("Cập nhật thành công", "success");
                 return RedirectToAction("Index");
             }
-            ViewBag.MaTKND = new SelectList(db.NguoiDungs, "MaTKND", "HoTen", luuTru.MaTKND);
-            ViewBag.MaTKNNN = new SelectList(db.NguoiNuocNgoais, "MaTKNNN", "HoTen", luuTru.MaTKNNN);
+            ViewBag.MaTKND = new SelectList(db.NguoiDungs, "MaTKND", "MaTKND", luuTru.MaTKND);
+            ViewBag.MaTKNNN = new SelectList(db.NguoiNuocNgoais, "MaTKNNN", "MaTKNNN", luuTru.MaTKNNN);
             return View(luuTru);
         }
 

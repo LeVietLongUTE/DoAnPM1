@@ -451,9 +451,9 @@
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-users" aria-hidden="true"></i> Tài khoản</a>
                                 <ul class="dropdown-menu  " aria-labelledby="dropdown01">
                                     <li><a href="#" class="ml-1 p-2"><i class=" fa fa-suitcase"></i> <span class="ml-1 p-2">Cập nhật thông tin </span> </a></li>
-                                    <li><a href="@Url.Action("DKTaiKhoanNNN", "NguoiDung")" class="ml-1 p-2"><i class="fa fa-user-plus"></i> <span class="ml-1 p-2">Đăng kí tài khoản NNN</span>  </a></li>
+                                    <li><a href="@Url.Action("Create", "NguoiDung")" class="ml-1 p-2"><i class="fa fa-user-plus"></i> <span class="ml-1 p-2">Đăng kí tài khoản NNN</span>  </a></li>
 
-                                    <li><a href="@Url.Action("DanhSachNNN", "NguoiDung")" class="ml-1 p-1"><i class=" fa fa-suitcase"></i> <span class="ml-1 p-2">Cập nhật thông tin đến/đi </span> </a></li>
+                                    <li><a href="@Url.Action("Index", "LuuTrus")" class="ml-1 p-1"><i class=" fa fa-suitcase"></i> <span class="ml-1 p-2">Cập nhật thông tin đến/đi </span> </a></li>
 
                                     <li>
                                         <a href="#" class="ml-1 p-2">
@@ -471,6 +471,14 @@
 
         </header><!-- end market-header -->
     </div>
+    <div class="col-md-12 justify-content-center mx-auto text-center">
+        @if (TempData["AlertMessage"] != null)
+        {
+            <div id="AlertBox" class="alert @TempData["AlertType"] hide bg-info">
+                @TempData["AlertMessage"]
+            </div>
+        }
+    </div>
     <!-- body -->
     <div class="page-title mt-0 pt-2">
         <div class="container mt-0 ">
@@ -478,7 +486,7 @@
                 <div class="col-md-12">
                     <ul class="breadcrumbstyle clearfix text-uppercase ">
                         <li class="breadcrumb-item"><a href="@Url.Action("Index","NguoiDung")">Trang chủ</a></li>
-                        <li class="breadcrumb-item active">Cập nhật thông tin người nước ngoài đi</li>
+                        <li class="breadcrumb-item active">Cập nhật thông tin người nước ngoài đến</li>
                     </ul>
                 </div>
             </div>
@@ -503,7 +511,7 @@
                                     </div>
                                     <div class="col-lg-3 ml-5">
                                         <a class="abc">
-                                           
+
                                             @Html.EditorFor(model => model.MaLT, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mời nhập mã lưu trú!" } })
                                             @Html.ValidationMessageFor(model => model.MaLT, "", new { @class = "text-danger" })
                                         </a>
@@ -536,7 +544,7 @@
                                     <div class="col-lg-3 ml-5">
                                         <a class="abc">
                                             @Html.DropDownList("MaTKND", null, htmlAttributes: new { @class = "form-control" })
-                                           
+
                                             @Html.ValidationMessageFor(model => model.MaTKND, "", new { @class = "text-danger" })
                                         </a>
                                     </div>
@@ -595,7 +603,8 @@
                                     <div class="col-lg-3 ml-5">
                                         <a class="abc">
                                             @Html.TextBoxFor(model => model.NDLT, "{0:yyyy-MM-ddThh:mm:ss}", new { @class = "form-control", type = "datetime-local" })
-                                            @Html.ValidationMessageFor(model => model.NDLT, "", new { @class = "text-danger" })</a>
+                                            @Html.ValidationMessageFor(model => model.NDLT, "", new { @class = "text-danger" })
+                                        </a>
                                     </div>
                                 </div>
                             </ul>
@@ -625,7 +634,7 @@
                                 </div>
                             </ul>
                         </div>
-                       
+
 
                     </div>
 
@@ -712,7 +721,10 @@
     <script src="~/Assets/Client/js/tether.min.js"></script>
     <script src="~/Assets/Client/js/bootstrap.min.js"></script>
     <script src="~/Assets/Client/js/custom.js"></script>
-
+    <script>
+        $('#AlertBox').removeClass("hide");
+        $('#AlertBox').delay(3000).slideUp(500);
+    </script>
 
 
 

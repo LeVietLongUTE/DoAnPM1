@@ -468,6 +468,14 @@
         </header>
 
     </div>
+    <div class="col-md-12 justify-content-center mx-auto text-center">
+        @if (TempData["AlertMessage"] != null)
+        {
+            <div id="AlertBox" class="alert @TempData["AlertType"] hide">
+                @TempData["AlertMessage"]
+            </div>
+        }
+    </div>
     <section class="section">
         <div class="container">
             <div class="row">
@@ -983,7 +991,10 @@
     <script src=”https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js”></script>
     <script src=”https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js”></script>
     <script src=”https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js”></script>
-
+    <script>
+        $('#AlertBox').removeClass("hide");
+        $('#AlertBox').delay(3000).slideUp(500);
+    </script>
 </body>
 </html>
 

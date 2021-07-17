@@ -4,10 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
 using System.Web.Mvc;
+using DoAnPM1.Areas.Admin.Controllers;
 
 namespace DoAnPM1.Controllers
 {
-    public class NguoiDungController : Controller
+    public class NguoiDungController : BaseController
     {
         private connect db = new connect();
 
@@ -38,10 +39,12 @@ namespace DoAnPM1.Controllers
                     {
                         db.NguoiNuocNgoais.Add(nguoiNuocNgoai);
                         await db.SaveChangesAsync();
+                        SetAlert("Cập nhật thành công", "success");
                         return RedirectToAction("Index");
                     }
                     else
                     {
+                        SetAlert("Cập nhật không thành công!! ", "error");
                         ViewBag.error =("Mã tài khoản đã tồn tại");
                     }
                    

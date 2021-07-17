@@ -34,7 +34,7 @@
         [Required(ErrorMessage = "Ngày đến đăng kí không được để trống! ")]
         public DateTime NDKLT { get; set; }
         [Display(Name = "Ngày Đến Lưu Trú")]
-        [Required(ErrorMessage = "Ngày đến lưu trú không được để trống! ")]
+       
         public DateTime? NDLT { get; set; }
         [Display(Name = "Số Phòng")]
         [Required(ErrorMessage = "Số phòng không được để trống! ")]
@@ -43,7 +43,7 @@
         [Required(ErrorMessage = "Ngày đi dự kiến không được để trống! ")]
         public DateTime NDDK { get; set; }
         [Display(Name = "Ngày Đi Thực Tế")]
-        [Required(ErrorMessage = "Ngày đi thực tế không được để trống! ")]
+       
         public DateTime? NDTT { get; set; }
 
         [Required]

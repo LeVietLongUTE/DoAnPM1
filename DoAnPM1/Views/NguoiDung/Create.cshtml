@@ -448,6 +448,7 @@
         </header>
 
     </div>
+    
     <div class="page-title mt-0 pt-2">
         <div class="container mt-0 ">
             <div class="row">
@@ -459,13 +460,21 @@
                 </div>
             </div>
         </div>
-
+       
         <section class="section md p-4">
             <h2 class="text-center pb-5 ">Website Quản Lý Người Nước Ngoài Tại Thành Phố Đà Nẵng</h2>
             @using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="col-md-12 justify-content-center mx-auto text-center">
+                    @if (TempData["AlertMessage"] != null)
+                    {
+                        <div id="AlertBox" class="alert @TempData["AlertType"] hide bg-info">
+                            @TempData["AlertMessage"]
+                        </div>
+                    }
+                </div>
                 <div>
                     <h4 class="col-8 ml-5">Đăng Kí Tài Khoản Người Nước Ngoài</h4>
                 </div>
@@ -480,8 +489,8 @@
                                     <a class="abc">
                                         @Html.EditorFor(model => model.MaTKNNN, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mời nhập mã hộ chiếu" } })
                                         @Html.ValidationMessageFor(model => model.MaTKNNN, "", new { @class = "text-danger" })
-                                        @if(ViewBag.error != null)
-                                        {@ViewBag.error }
+                                        @if (ViewBag.error != null)
+                                        {@ViewBag.error}
                                     </a>
                                 </div>
                             </div>
@@ -610,7 +619,7 @@
                                     <h4>Giới tính</h4>
                                 </div>
                                 <div class="col-lg-3 ml-5 ">
-                                    <div >
+                                    <div>
                                         <a class="column is-one-fifth">
                                             @Html.DropDownList("GioiTinh", new List<SelectListItem>
                                                     {
@@ -624,12 +633,12 @@
                                                         }
                                                     })
                                         </a>
-                                       
+
 
                                         @Html.ValidationMessageFor(model => model.GioiTinh, "", new { @class = "text-danger" })
                                     </div>
-                                      </div>
-                                    </div>
+                                </div>
+                            </div>
                         </ul>
                     </div>
                     <div class="row pt-0">
@@ -649,97 +658,100 @@
 
                     </div>
                 </div>
-               
-        <div class="buton p-5">
-            <button type="submit" class="btnn btn-primary">Đăng Kí </button>
-        </div>  
-    }
-            </section>
+
+                <div class="buton p-5">
+                    <button type="submit" class="btnn btn-primary">Đăng Kí </button>
+                </div>
+            }
+        </section>
 
 
 
 
 
 
-            </div>
-            <footer class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-7">
-                            <div class="widget">
-                                <div class="footer-text text-left">
-                                    <a href="index.html"><img src="/Assets/Client/images/version/tech-footer-logo.png" alt="" class="img-fluid"></a>
-                                    <p>Tech Blog is a technology blog, we sharing marketing, news and gadget articles.</p>
-                                    <div class="social">
-                                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
-                                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
-                                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
-                                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-                                    </div>
-
-                                    <hr class="invis">
-
-                                    <div class="newsletter-widget text-left">
-                                        <form class="form-inline">
-                                            <input type="text" class="form-control" placeholder="Enter your email address">
-                                            <button type="submit" class="btn btn-primary">SUBMIT</button>
-                                        </form>
-                                    </div> e
-                                </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="widget">
+                        <div class="footer-text text-left">
+                            <a href="index.html"><img src="/Assets/Client/images/version/tech-footer-logo.png" alt="" class="img-fluid"></a>
+                            <p>Tech Blog is a technology blog, we sharing marketing, news and gadget articles.</p>
+                            <div class="social">
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
                             </div>
-                        </div>
 
-                        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-                            <div class="widget">
-                                <h2 class="widget-title">Popular Categories</h2>
-                                <div class="link-widget">
-                                    <ul>
-                                        <li><a href="#">Marketing <span>(21)</span></a></li>
-                                        <li><a href="#">SEO Service <span>(15)</span></a></li>
-                                        <li><a href="#">Digital Agency <span>(31)</span></a></li>
-                                        <li><a href="#">Make Money <span>(22)</span></a></li>
-                                        <li><a href="#">Blogging <span>(66)</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                            <hr class="invis">
 
-                        <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
-                            <div class="widget">
-                                <h2 class="widget-title">Copyrights</h2>
-                                <div class="link-widget">
-                                    <ul>
-                                        <li><a href="#">About us</a></li>
-                                        <li><a href="#">Advertising</a></li>
-                                        <li><a href="#">Write for us</a></li>
-                                        <li><a href="#">Trademark</a></li>
-                                        <li><a href="#">License & Help</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <br>
-                            <div class="copyright">&copy; Tech Blog. Design: <a href="http://html.design">HTML Design</a>.</div>
+                            <div class="newsletter-widget text-left">
+                                <form class="form-inline">
+                                    <input type="text" class="form-control" placeholder="Enter your email address">
+                                    <button type="submit" class="btn btn-primary">SUBMIT</button>
+                                </form>
+                            </div> e
                         </div>
                     </div>
                 </div>
-            </footer>
 
-            <script src="~/Assets/Client/js/jquery.min.js"></script>
-            <script src="~/Assets/Client/js/tether.min.js"></script>
-            <script src="~/Assets/Client/js/bootstrap.min.js"></script>
-            <script src="~/Assets/Client/js/custom.js"></script>
-            <link rel=”stylesheet” href=”https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css” />
-            <script src=”https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js”></script>
-            <script src=”https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js”></script>
-            <script src=”https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js”></script>
+                <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                    <div class="widget">
+                        <h2 class="widget-title">Popular Categories</h2>
+                        <div class="link-widget">
+                            <ul>
+                                <li><a href="#">Marketing <span>(21)</span></a></li>
+                                <li><a href="#">SEO Service <span>(15)</span></a></li>
+                                <li><a href="#">Digital Agency <span>(31)</span></a></li>
+                                <li><a href="#">Make Money <span>(22)</span></a></li>
+                                <li><a href="#">Blogging <span>(66)</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-        </body>
+                <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
+                    <div class="widget">
+                        <h2 class="widget-title">Copyrights</h2>
+                        <div class="link-widget">
+                            <ul>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Advertising</a></li>
+                                <li><a href="#">Write for us</a></li>
+                                <li><a href="#">Trademark</a></li>
+                                <li><a href="#">License & Help</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <br>
+                    <div class="copyright">&copy; Tech Blog. Design: <a href="http://html.design">HTML Design</a>.</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/Assets/Client/js/jquery.min.js"></script>
+    <script src="~/Assets/Client/js/tether.min.js"></script>
+    <script src="~/Assets/Client/js/bootstrap.min.js"></script>
+    <script src="~/Assets/Client/js/custom.js"></script>
+    <link rel=”stylesheet” href=”https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css” />
+    <script src=”https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js”></script>
+    <script src=”https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js”></script>
+    <script src=”https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js”></script>
+    <script>
+        $('#AlertBox').removeClass("hide");
+        $('#AlertBox').delay(3000).slideUp(500);
+    </script>
+</body>
 </html>
 
 
